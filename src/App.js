@@ -1,8 +1,8 @@
 import { useGlobalContext } from "./context";
+import Paginate from "./components/Paginate";
 
 function App() {
   const { data, isLoading } = useGlobalContext();
-
   console.log(data);
 
   if (isLoading) {
@@ -10,13 +10,14 @@ function App() {
   }
   return (
     <div className="App">
-      {data.map((item) => {
+      {data.data.map((item) => {
         return (
           <h1 key={item.id}>
             {item.first_name} {item.last_name}
           </h1>
         );
       })}
+      <Paginate />
     </div>
   );
 }

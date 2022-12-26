@@ -16,7 +16,7 @@ const AppProvider = ({ children }) => {
         `https://www.balldontlie.io/api/v1/${query}?page=${page}&search=${search}`
       );
       const data = await response.json();
-      setData(data.data);
+      setData(data);
     } catch (error) {
       console.log(error);
     }
