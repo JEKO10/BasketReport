@@ -1,19 +1,22 @@
 import { useGlobalContext } from "./context";
 
 function App() {
-  const { data } = useGlobalContext();
+  const { data, isLoading } = useGlobalContext();
 
   console.log(data);
 
+  if (isLoading) {
+    return <div className="loading"></div>;
+  }
   return (
     <div className="App">
-      {/* {data.map((item) => {
+      {data.map((item) => {
         return (
-          <h1>
+          <h1 key={item.id}>
             {item.first_name} {item.last_name}
           </h1>
         );
-      })} */}
+      })}
     </div>
   );
 }

@@ -4,18 +4,29 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
-    const response = await fetch("https://www.balldontlie.io/api/v1/players");
-    const data = await response.json();
-    setData(data);
+    setIsLoading(true);
+    try {
+      const response = await fetch("https://www.balldontlie.io/api/v1/players");
+      const data = await response.json();
+      setData(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+    setIsLoading(false);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  return <AppContext.Provider value={{ data }}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={{ data, isLoading }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export const useGlobalContext = () => {
