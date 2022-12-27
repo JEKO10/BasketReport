@@ -1,0 +1,19 @@
+nav {
+  @include flex(flex-start, center);
+  background-color: #000;
+  color: #fff;
+  padding: 15px 50px;
+  font-family: $primaryFont;
+
+  ul {
+    @include flex(space-between, center);
+    list-style-type: none;
+
+    li {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 40px;
+      cursor: pointer;
+    }
+  }
+}

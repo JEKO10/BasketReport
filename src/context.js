@@ -18,7 +18,7 @@ const AppProvider = ({ children }) => {
       const data = await response.json();
       setData(data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
     setIsLoading(false);
   };

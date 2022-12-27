@@ -1,22 +1,31 @@
 import { useGlobalContext } from "../context";
 
 function Paginate() {
-  const { data } = useGlobalContext();
-  const total = data.meta.total_count;
-  const perPage = data.meta.per_page;
+  const {
+    data: {
+      meta: { total_count, per_page },
+    },
+  } = useGlobalContext();
+
   const pageNumbers = [];
 
-  for (let i = 1; i < Math.ceil(total / perPage); i++) {
+  for (let i = 1; i < Math.ceil(total_count / per_page); i++) {
     pageNumbers.push(i);
   }
 
   return (
-    <>
-      {pageNumbers.map((item) => {
-        console.log(item);
-        return <h1>{item}</h1>;
-      })}
-    </>
+    <ul>
+      {pageNumbers.map((item) => (
+        <li
+          key={item}
+          onClick={() => {
+            console.log("Item: " + item, "Page: ");
+          }}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }
 
