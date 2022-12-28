@@ -14,6 +14,21 @@ nav {
       font-weight: 700;
       margin: 0 50px;
       cursor: pointer;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: all 500ms ease;
+
+        &:hover {
+          color: #0165ff;
+          text-decoration: underline;
+        }
+
+        &.active {
+          color: #0165ff;
+        }
+      }
     }
   }
 }

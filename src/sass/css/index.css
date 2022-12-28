@@ -32,12 +32,47 @@ nav ul li {
   margin: 0 50px;
   cursor: pointer;
 }
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+nav ul li a:hover {
+  color: #0165ff;
+  text-decoration: underline;
+}
+nav ul li a.active {
+  color: #0165ff;
+}
 
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  margin-top: 10rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.pagination li {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 50px;
+  cursor: pointer;
 }
 
 .loading {

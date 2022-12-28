@@ -1,6 +1,6 @@
 import { useGlobalContext } from "../context";
 
-function Paginate() {
+function Pagination() {
   const { data, page, setPage } = useGlobalContext();
   const pageNumbers = [];
 
@@ -15,8 +15,8 @@ function Paginate() {
   return (
     <>
       {data ? (
-        <ul>
-          {pageNumbers.map((item) => (
+        <ul className="pagination">
+          {pageNumbers.slice(page - 1, page + 4).map((item) => (
             <li
               value={item}
               key={item}
@@ -35,4 +35,4 @@ function Paginate() {
   );
 }
 
-export default Paginate;
+export default Pagination;
