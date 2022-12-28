@@ -5,7 +5,7 @@ function App() {
   return (
     <main>
       <Header />
-      {/* <Paginate /> */}
+      <Paginate />
     </main>
   );
 }

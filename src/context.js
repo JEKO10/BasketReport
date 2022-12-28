@@ -28,7 +28,7 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ data, isLoading }}>
+    <AppContext.Provider value={{ data, isLoading, page, setPage }}>
       {children}
     </AppContext.Provider>
   );
