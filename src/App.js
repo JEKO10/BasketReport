@@ -6,6 +6,7 @@ import News from "./pages/News";
 import Players from "./pages/Players";
 import Stats from "./pages/Stats";
 import Teams from "./pages/Teams";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/players" element={<Players />} />
         <Route path="/stats" element={<Stats />} />
         <Route path="/teams" element={<Teams />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
     </>
   );
