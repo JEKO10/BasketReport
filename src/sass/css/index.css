@@ -46,6 +46,48 @@ nav ul li a.active {
   color: #0165ff;
 }
 
+.error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10rem;
+  font-family: "Roboto", Arial, sans-serif;
+}
+.error h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.error a {
+  display: block;
+  width: 20%;
+  text-align: center;
+  margin: 1rem auto;
+  background-color: #0165ff;
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 15px;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-decoration: none;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.error a:hover {
+  color: #000;
+  background-color: #d81f55;
+}
+
 * {
   margin: 0;
   padding: 0;
