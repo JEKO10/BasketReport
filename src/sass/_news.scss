@@ -1,0 +1,47 @@
+.news {
+  max-width: 90vw;
+  margin: 3rem auto;
+  font-family: $primaryFont;
+
+  &Container {
+    display: grid;
+    gap: 50px 55px;
+    grid-template-columns: repeat(2, 1fr);
+
+    h1 {
+      font-size: 1.5rem;
+      max-width: 80%;
+    }
+
+    div div {
+      @include flex(flex-start, flex-start);
+      flex-direction: column;
+      margin-top: 1rem;
+
+      h2 {
+        margin-bottom: 1rem;
+
+        span {
+          text-transform: capitalize;
+        }
+      }
+
+      a {
+        background-color: #0165ff;
+        color: #fff;
+        font-size: 1.3rem;
+        padding: 15px 20px;
+        border-radius: 15px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-decoration: none;
+        transition: all 500ms ease;
+
+        &:hover {
+          color: #000;
+          background-color: #d81f55;
+        }
+      }
+    }
+  }
+}

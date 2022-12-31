@@ -46,6 +46,59 @@ nav ul li a.active {
   color: #0165ff;
 }
 
+.news {
+  max-width: 90vw;
+  margin: 3rem auto;
+  font-family: "Roboto", Arial, sans-serif;
+}
+.newsContainer {
+  display: grid;
+  gap: 50px 55px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.newsContainer h1 {
+  font-size: 1.5rem;
+  max-width: 80%;
+}
+.newsContainer div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1rem;
+}
+.newsContainer div div h2 {
+  margin-bottom: 1rem;
+}
+.newsContainer div div h2 span {
+  text-transform: capitalize;
+}
+.newsContainer div div a {
+  background-color: #0165ff;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-decoration: none;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.newsContainer div div a:hover {
+  color: #000;
+  background-color: #d81f55;
+}
+
 .error {
   display: -webkit-box;
   display: -ms-flexbox;

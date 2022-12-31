@@ -3,8 +3,11 @@ import { useContext, createContext, useState, useEffect } from "react";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const [data, setData] = useState();
-  const [news, setNews] = useState();
+  const [data, setData] = useState([]);
+  const [news, setNews] = useState([]);
+  const [teamNews, setTeamNews] = useState("");
+  const [source, setSource] = useState("");
+  const [playerNews, setPlayerNews] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("players");
@@ -28,12 +31,11 @@ const AppProvider = ({ children }) => {
       setData(data);
 
       const responseNews = await fetch(
-        `https://nba-latest-news.p.rapidapi.com/articles`,
+        `https://nba-latest-news.p.rapidapi.com/articles?team=${teamNews}&source=${source}&player=${playerNews}`,
         options
       );
       const newsData = await responseNews.json();
       setNews(newsData);
-      console.log(newsData);
     } catch (error) {
       console.error(error);
     }
@@ -45,7 +47,18 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ data, isLoading, page, setPage }}>
+    <AppContext.Provider
+      value={{
+        data,
+        isLoading,
+        page,
+        setPage,
+        news,
+        setTeamNews,
+        setSource,
+        setPlayerNews,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
