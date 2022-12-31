@@ -3,6 +3,15 @@
   margin: 3rem auto;
   font-family: $primaryFont;
 
+  .filter {
+    @include flex(space-between, center);
+    margin: 3rem 0;
+
+    input {
+      padding: 15px 20px;
+    }
+  }
+
   &Container {
     display: grid;
     gap: 50px 55px;
@@ -29,8 +38,8 @@
       a {
         background-color: #0165ff;
         color: #fff;
-        font-size: 1.3rem;
-        padding: 15px 20px;
+        font-size: 1rem;
+        padding: 10px 20px;
         border-radius: 15px;
         font-weight: 500;
         letter-spacing: 3px;

@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
       setData(data);
 
       const responseNews = await fetch(
-        `https://nba-latest-news.p.rapidapi.com/articles?team=${teamNews}&source=${source}&player=${playerNews}`,
+        `https://nba-latest-news.p.rapidapi.com/articles?team=${teamNews}&source=${source}&player=${playerNews}&limit=25`,
         options
       );
       const newsData = await responseNews.json();
@@ -57,6 +57,9 @@ const AppProvider = ({ children }) => {
         setTeamNews,
         setSource,
         setPlayerNews,
+        teamNews,
+        source,
+        playerNews,
       }}
     >
       {children}

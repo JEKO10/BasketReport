@@ -51,6 +51,21 @@ nav ul li a.active {
   margin: 3rem auto;
   font-family: "Roboto", Arial, sans-serif;
 }
+.news .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3rem 0;
+}
+.news .filter input {
+  padding: 15px 20px;
+}
 .newsContainer {
   display: grid;
   gap: 50px 55px;
@@ -85,8 +100,8 @@ nav ul li a.active {
 .newsContainer div div a {
   background-color: #0165ff;
   color: #fff;
-  font-size: 1.3rem;
-  padding: 15px 20px;
+  font-size: 1rem;
+  padding: 10px 20px;
   border-radius: 15px;
   font-weight: 500;
   letter-spacing: 3px;
