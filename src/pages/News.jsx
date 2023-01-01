@@ -5,16 +5,13 @@ function News() {
   const { news, setTeamNews, setSource, setPlayerNews, isLoading } =
     useGlobalContext();
 
-  if (isLoading) {
-    return <div className="loading"></div>;
-  }
   return (
     <section className="news">
       <article className="filter">
         <input
           type="text"
           name="player"
-          placeholder="Enter players name"
+          placeholder="Filter by player"
           onChange={(e) => {
             setPlayerNews(e.target.value);
           }}
@@ -22,7 +19,7 @@ function News() {
         <input
           type="text"
           name="team"
-          placeholder="Enter team name"
+          placeholder="Filter by team"
           onChange={(e) => {
             setTeamNews(e.target.value);
           }}
@@ -30,27 +27,31 @@ function News() {
         <input
           type="text"
           name="source"
-          placeholder="Enter source"
+          placeholder="Filter by source"
           onChange={(e) => {
             setSource(e.target.value);
           }}
         />
       </article>
-      <article className="newsContainer">
-        {news.map((item) => (
-          <div key={item.url}>
-            <h1>{item.title}</h1>
-            <div>
-              <h2>
-                Source: <span>{item.source}</span>
-              </h2>
-              <a href={item.url} target="_blank" rel="noreferrer noopener">
-                Read more
-              </a>
+      {isLoading ? (
+        <div className="loading"></div>
+      ) : (
+        <article className="newsContainer">
+          {news.map((item) => (
+            <div key={item.url}>
+              <h1>{item.title}</h1>
+              <div>
+                <h2>
+                  Source: <span>{item.source}</span>
+                </h2>
+                <a href={item.url} target="_blank" rel="noreferrer noopener">
+                  Read more
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
-      </article>
+          ))}
+        </article>
+      )}
     </section>
   );
 }

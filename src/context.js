@@ -44,7 +44,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [teamNews, playerNews, source]);
 
   return (
     <AppContext.Provider

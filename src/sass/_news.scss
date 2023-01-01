@@ -8,7 +8,22 @@
     margin: 3rem 0;
 
     input {
-      padding: 15px 20px;
+      font-size: 1.2rem;
+      padding: 10px 15px;
+      border: 3px solid #0165ff;
+      border-radius: 15px;
+      font-family: $primaryFont;
+      outline: none;
+      transition: all 500ms ease;
+
+      &:hover {
+        box-shadow: -5px 6px 7px 0px #0165ff;
+      }
+
+      &:focus {
+        border: 3px solid #d81f55;
+        box-shadow: -5px 6px 7px 0px #d81f55;
+      }
     }
   }
 
