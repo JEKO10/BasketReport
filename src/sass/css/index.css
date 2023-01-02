@@ -110,9 +110,6 @@ nav ul li a.active {
 .newsContainer div div h2 {
   margin-bottom: 1rem;
 }
-.newsContainer div div h2 span {
-  text-transform: capitalize;
-}
 .newsContainer div div a {
   background-color: #0165ff;
   color: #fff;

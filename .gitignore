@@ -26,3 +26,8 @@ yarn-error.log*
 *.css.map
 *.sass.map
 *.scss.map
+
+.env
+.env.example
+.env.local
+.env.staging

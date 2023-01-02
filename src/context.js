@@ -16,7 +16,7 @@ const AppProvider = ({ children }) => {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "689bdba840msh627580b0402dd16p1bbcc9jsn0188595ae046",
+      "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
       "X-RapidAPI-Host": "nba-latest-news.p.rapidapi.com",
     },
   };
@@ -29,7 +29,15 @@ const AppProvider = ({ children }) => {
       );
       const data = await response.json();
       setData(data);
+    } catch (error) {
+      console.error(error);
+    }
+    setIsLoading(false);
+  };
 
+  const fetchNews = async () => {
+    setIsLoading(true);
+    try {
       const responseNews = await fetch(
         `https://nba-latest-news.p.rapidapi.com/articles?team=${teamNews}&source=${source}&player=${playerNews}&limit=25`,
         options
@@ -44,6 +52,10 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchData();
+  }, [query, search, page]);
+
+  useEffect(() => {
+    fetchNews();
   }, [teamNews, playerNews, source]);
 
   return (
