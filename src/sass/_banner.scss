@@ -1,0 +1,6 @@
+header {
+  @include flex(space-between, center);
+  img {
+    width: 20%;
+  }
+}

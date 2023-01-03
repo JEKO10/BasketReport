@@ -1,14 +1,21 @@
 import React from "react";
+import Banner from "../images/banner.png";
 
 function Home() {
-  return <section className="home"></section>;
+  return (
+    <section className="home">
+      <header>
+        <img src={Banner} alt="Banner" />
+        <ul className="headlines">
+          <li>Games</li>
+          <li>News</li>
+          <li>Players</li>
+          <li>Stats</li>
+          <li>Teams</li>
+        </ul>
+      </header>
+    </section>
+  );
 }
 
 export default Home;
-/* {data?.data?.map((item) => {
-        return (
-          <h1 key={item.id}>
-            {item.first_name} {item.last_name}
-          </h1>
-        );
-      })} */
