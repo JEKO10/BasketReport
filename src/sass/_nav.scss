@@ -21,12 +21,12 @@ nav {
         transition: all 500ms ease;
 
         &:hover {
-          color: #0165ff;
+          color: $primaryColor;
           text-decoration: underline;
         }
 
         &.active {
-          color: #0165ff;
+          color: $primaryColor;
         }
       }
     }

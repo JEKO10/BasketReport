@@ -1,0 +1,42 @@
+header {
+  @include flex(flex-start, flex-start);
+  max-width: 90vw;
+  margin: 2rem auto;
+  font-family: $primaryFont;
+
+  img {
+    width: 75%;
+    margin-right: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+    background-color: #fff;
+    padding: 20px 50px 0 20px;
+
+    li {
+      margin-bottom: 40px;
+      font-weight: 700;
+
+      a {
+        color: $primaryColor;
+        transition: all 200ms ease;
+
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+
+      p {
+        margin-top: 1rem;
+        font-weight: initial;
+      }
+
+      &#head {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  }
+}

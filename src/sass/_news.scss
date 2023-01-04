@@ -10,19 +10,19 @@
     input {
       font-size: 1.2rem;
       padding: 10px 15px;
-      border: 3px solid #0165ff;
+      border: 3px solid $primaryColor;
       border-radius: 15px;
       font-family: $primaryFont;
       outline: none;
       transition: all 500ms ease;
 
       &:hover {
-        box-shadow: -5px 6px 7px 0px #0165ff;
+        box-shadow: -5px 6px 7px 0px $primaryColor;
       }
 
       &:focus {
-        border: 3px solid #d81f55;
-        box-shadow: -5px 6px 7px 0px #d81f55;
+        border: 3px solid $secondaryColor;
+        box-shadow: -5px 6px 7px 0px $secondaryColor;
       }
     }
   }
@@ -47,7 +47,7 @@
       }
 
       a {
-        background-color: #0165ff;
+        background-color: $primaryColor;
         color: #fff;
         font-size: 1rem;
         padding: 10px 20px;
@@ -59,7 +59,7 @@
 
         &:hover {
           color: #000;
-          background-color: #d81f55;
+          background-color: $secondaryColor;
         }
       }
     }

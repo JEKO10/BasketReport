@@ -1,9 +1,13 @@
-@import "config", "nav", "news", "banner", "error";
+@import "config", "nav", "news", "header", "error";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f6;
 }
 
 .pagination {
@@ -26,8 +30,8 @@
   margin: 0 auto;
   margin-top: 10rem;
   border-radius: 50%;
-  border: 3px solid #808080;
-  border-top-color: #0000ff;
+  border: 3px solid $secondaryColor;
+  border-top-color: $primaryColor;
   animation: spinner 0.6s linear infinite;
 }
 
