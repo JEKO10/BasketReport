@@ -3,7 +3,7 @@ import Logo from "../images/logo.svg";
 import { useGlobalContext } from "../context";
 
 function Navbar() {
-  const { query } = useGlobalContext();
+  const { query, setQuery } = useGlobalContext();
 
   return (
     <nav>
@@ -12,22 +12,38 @@ function Navbar() {
       </Link>
       <ul>
         <li>
-          <Link to="/players" className={query === "players" ? "active" : ""}>
+          <Link
+            to="/players"
+            className={query === "players" ? "active" : ""}
+            onClick={() => setQuery("players")}
+          >
             Players
           </Link>
         </li>
         <li>
-          <Link to="/teams" className={query === "teams" ? "active" : ""}>
+          <Link
+            to="/teams"
+            className={query === "teams" ? "active" : ""}
+            onClick={() => setQuery("teams")}
+          >
             Teams
           </Link>
         </li>
         <li>
-          <Link to="/games" className={query === "games" ? "active" : ""}>
+          <Link
+            to="/games"
+            className={query === "games" ? "active" : ""}
+            onClick={() => setQuery("games")}
+          >
             Games
           </Link>
         </li>
         <li>
-          <Link to="/stats" className={query === "stats" ? "active" : ""}>
+          <Link
+            to="/stats"
+            className={query === "stats" ? "active" : ""}
+            onClick={() => setQuery("stats")}
+          >
             Stats
           </Link>
         </li>

@@ -52,11 +52,12 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchData();
+    console.log(query);
   }, [query, search, page]);
 
-  useEffect(() => {
-    fetchNews();
-  }, [teamNews, playerNews, source]);
+  // useEffect(() => {
+  //   fetchNews();
+  // }, [teamNews, playerNews, source]);
 
   return (
     <AppContext.Provider
@@ -72,6 +73,7 @@ const AppProvider = ({ children }) => {
         teamNews,
         source,
         playerNews,
+        setQuery,
       }}
     >
       {children}
