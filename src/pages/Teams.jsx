@@ -10,9 +10,9 @@ function Teams() {
       {data?.data?.map((team) => {
         return (
           <div key={team.id}>
-            <h1>
+            <h2>
               Full name: {team.full_name} ({team.abbreviation})
-            </h1>
+            </h2>
             <h2>City: {team.city}</h2>
             <h2>Conference: {team.conference}</h2>
             <h2>Division: {team.division}</h2>

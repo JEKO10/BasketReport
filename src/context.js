@@ -52,7 +52,6 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchData();
-    console.log(query);
   }, [query, search, page]);
 
   // useEffect(() => {
@@ -63,6 +62,8 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         data,
+        setSearch,
+        search,
         isLoading,
         page,
         setPage,

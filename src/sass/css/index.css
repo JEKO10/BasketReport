@@ -51,37 +51,6 @@ nav ul li a.active {
   margin: 3rem auto;
   font-family: "Roboto", Arial, sans-serif;
 }
-.news .filter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 3rem 0;
-}
-.news .filter input {
-  font-size: 1.2rem;
-  padding: 10px 15px;
-  border: 3px solid #0165ff;
-  border-radius: 15px;
-  font-family: "Roboto", Arial, sans-serif;
-  outline: none;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-.news .filter input:hover {
-  -webkit-box-shadow: -5px 6px 7px 0px #0165ff;
-          box-shadow: -5px 6px 7px 0px #0165ff;
-}
-.news .filter input:focus {
-  border: 3px solid #d81f55;
-  -webkit-box-shadow: -5px 6px 7px 0px #d81f55;
-          box-shadow: -5px 6px 7px 0px #d81f55;
-}
 .newsContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -125,6 +94,38 @@ nav ul li a.active {
 .newsContainer div div a:hover {
   color: #000;
   background-color: #d81f55;
+}
+
+.filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3rem 0;
+}
+.filter input {
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border: 3px solid #0165ff;
+  border-radius: 15px;
+  font-family: "Roboto", Arial, sans-serif;
+  outline: none;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.filter input:hover {
+  -webkit-box-shadow: -5px 6px 7px 0px #0165ff;
+          box-shadow: -5px 6px 7px 0px #0165ff;
+}
+.filter input:focus {
+  border: 3px solid #d81f55;
+  -webkit-box-shadow: -5px 6px 7px 0px #d81f55;
+          box-shadow: -5px 6px 7px 0px #d81f55;
 }
 
 header {
@@ -181,19 +182,7 @@ header ul li#head {
   gap: 50px;
 }
 .mainSection h2 {
-  margin: 3px 0;
-}
-
-.players {
-  max-width: 90vw;
-  margin: 5rem auto;
-  font-family: "Roboto", Arial, sans-serif;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-}
-.players h2 {
-  margin: 3px 0;
+  margin: 5px 0;
 }
 
 .error {

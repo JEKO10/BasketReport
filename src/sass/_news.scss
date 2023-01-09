@@ -3,30 +3,6 @@
   margin: 3rem auto;
   font-family: $primaryFont;
 
-  .filter {
-    @include flex(space-between, center);
-    margin: 3rem 0;
-
-    input {
-      font-size: 1.2rem;
-      padding: 10px 15px;
-      border: 3px solid $primaryColor;
-      border-radius: 15px;
-      font-family: $primaryFont;
-      outline: none;
-      transition: all 500ms ease;
-
-      &:hover {
-        box-shadow: -5px 6px 7px 0px $primaryColor;
-      }
-
-      &:focus {
-        border: 3px solid $secondaryColor;
-        box-shadow: -5px 6px 7px 0px $secondaryColor;
-      }
-    }
-  }
-
   &Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -62,6 +38,30 @@
           background-color: $secondaryColor;
         }
       }
+    }
+  }
+}
+
+.filter {
+  @include flex(space-between, center);
+  margin: 3rem 0;
+
+  input {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border: 3px solid $primaryColor;
+    border-radius: 15px;
+    font-family: $primaryFont;
+    outline: none;
+    transition: all 500ms ease;
+
+    &:hover {
+      box-shadow: -5px 6px 7px 0px $primaryColor;
+    }
+
+    &:focus {
+      border: 3px solid $secondaryColor;
+      box-shadow: -5px 6px 7px 0px $secondaryColor;
     }
   }
 }
