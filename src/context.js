@@ -56,8 +56,8 @@ const AppProvider = ({ children }) => {
   }, [query, search, page]);
 
   // useEffect(() => {
-  //   fetchNews();
-  // }, [teamNews, playerNews, source]);
+  // fetchNews();
+  // }, [news, teamNews, playerNews, source]);
 
   return (
     <AppContext.Provider

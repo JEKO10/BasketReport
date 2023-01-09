@@ -1,0 +1,12 @@
+.teams {
+  max-width: 90vw;
+  margin: 5rem auto;
+  font-family: $primaryFont;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+
+  h2 {
+    margin: 3px 0;
+  }
+}

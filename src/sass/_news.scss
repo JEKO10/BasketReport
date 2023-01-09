@@ -29,8 +29,8 @@
 
   &Container {
     display: grid;
-    gap: 50px 55px;
     grid-template-columns: repeat(2, 1fr);
+    gap: 50px 55px;
 
     h1 {
       font-size: 1.5rem;

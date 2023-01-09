@@ -84,8 +84,8 @@ nav ul li a.active {
 }
 .newsContainer {
   display: grid;
-  gap: 50px 55px;
   grid-template-columns: repeat(2, 1fr);
+  gap: 50px 55px;
 }
 .newsContainer h1 {
   font-size: 1.5rem;
@@ -170,6 +170,18 @@ header ul li#head {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.teams {
+  max-width: 90vw;
+  margin: 5rem auto;
+  font-family: "Roboto", Arial, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+.teams h2 {
+  margin: 3px 0;
 }
 
 .error {
