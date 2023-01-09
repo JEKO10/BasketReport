@@ -6,7 +6,7 @@ function Teams() {
   console.log(data);
 
   return (
-    <section className="teams">
+    <section className="mainSection">
       {data?.data?.map((team) => {
         return (
           <div key={team.id}>
