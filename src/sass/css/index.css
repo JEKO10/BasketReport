@@ -184,6 +184,9 @@ header ul li#head {
 .mainSection h2 {
   margin: 5px 0;
 }
+.mainSection h3 {
+  margin: 5px 0;
+}
 
 .error {
   display: -webkit-box;

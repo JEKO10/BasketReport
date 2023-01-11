@@ -2,24 +2,29 @@ import React from "react";
 import { useGlobalContext } from "../context";
 
 function Teams() {
-  const { data } = useGlobalContext();
-  console.log(data);
+  const { data, isLoading } = useGlobalContext();
 
   return (
-    <section className="mainSection">
-      {data?.data?.map((team) => {
-        return (
-          <div key={team.id}>
-            <h2>
-              Full name: {team.full_name} ({team.abbreviation})
-            </h2>
-            <h2>City: {team.city}</h2>
-            <h2>Conference: {team.conference}</h2>
-            <h2>Division: {team.division}</h2>
-          </div>
-        );
-      })}
-    </section>
+    <>
+      {isLoading ? (
+        <div className="loading"></div>
+      ) : (
+        <section className="mainSection">
+          {data?.data?.map((team) => {
+            return (
+              <div key={team.id}>
+                <h2>
+                  Full name: {team.full_name} ({team.abbreviation})
+                </h2>
+                <h3>City: {team.city}</h3>
+                <h3>Conference: {team.conference}</h3>
+                <h3>Division: {team.division}</h3>
+              </div>
+            );
+          })}
+        </section>
+      )}
+    </>
   );
 }
 
