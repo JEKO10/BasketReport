@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Games from "./pages/Games";
 import News from "./pages/News";
 import Players from "./pages/Players";
-import Stats from "./pages/Stats";
 import Teams from "./pages/Teams";
 import Error from "./pages/Error";
 
@@ -17,7 +16,6 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/news" element={<News />} />
         <Route path="/players" element={<Players />} />
-        <Route path="/stats" element={<Stats />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/*" element={<Error />} />
       </Routes>

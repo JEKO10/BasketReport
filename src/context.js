@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
   const [playerNews, setPlayerNews] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("players");
+  const [query, setQuery] = useState("");
   const [search, setSearch] = useState("");
 
   const options = {
@@ -74,6 +74,7 @@ const AppProvider = ({ children }) => {
         teamNews,
         source,
         playerNews,
+        query,
         setQuery,
       }}
     >

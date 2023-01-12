@@ -3,7 +3,6 @@ import { useGlobalContext } from "../context";
 
 function Games() {
   const { data, isLoading } = useGlobalContext();
-  console.log(data);
 
   return (
     <section>
