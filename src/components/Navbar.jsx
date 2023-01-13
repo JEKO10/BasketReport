@@ -7,7 +7,7 @@ function Navbar() {
 
   return (
     <nav>
-      <Link to="/" onClick={() => setQuery("")}>
+      <Link to="/" onClick={() => setQuery("stats")}>
         <img src={Logo} alt="Logo" />
       </Link>
       <ul>
@@ -41,10 +41,19 @@ function Navbar() {
         <li>
           <Link
             to="/news"
-            className={query === "news" ? "active" : ""}
-            onClick={() => setQuery("news")}
+            className={query === "season_averages" ? "active" : ""}
+            onClick={() => setQuery("season_averages")}
           >
             News
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/makeTeam"
+            className={query === "" ? "active" : ""}
+            onClick={() => setQuery("")}
+          >
+            Make your team
           </Link>
         </li>
       </ul>

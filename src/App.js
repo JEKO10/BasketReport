@@ -5,6 +5,7 @@ import Games from "./pages/Games";
 import News from "./pages/News";
 import Players from "./pages/Players";
 import Teams from "./pages/Teams";
+import MakeTeam from "./pages/MakeTeam";
 import Error from "./pages/Error";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/players" element={<Players />} />
         <Route path="/teams" element={<Teams />} />
+        <Route path="/makeTeam" element={<MakeTeam />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </>

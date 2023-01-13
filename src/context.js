@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
   const [playerNews, setPlayerNews] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("stats");
   const [search, setSearch] = useState("");
 
   const options = {
