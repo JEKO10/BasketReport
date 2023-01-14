@@ -46,7 +46,8 @@
   @include flex(space-between, center);
   margin: 3rem 0;
 
-  input {
+  input,
+  select {
     font-size: 1.2rem;
     padding: 10px 15px;
     border: 3px solid $primaryColor;
