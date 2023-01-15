@@ -1,7 +1,8 @@
+import React from "react";
 import Banner from "../images/lbj.jpg";
 import { Link } from "react-router-dom";
 
-function Home() {
+const Home: React.FC = () => {
   return (
     <section className="home">
       <header>
@@ -31,6 +32,6 @@ function Home() {
       </header>
     </section>
   );
-}
+};
 
 export default Home;

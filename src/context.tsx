@@ -7,13 +7,13 @@ import React, {
 } from "react";
 
 interface IAppContext {
-  data: {};
+  data: any;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   search: string;
   isLoading: boolean;
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
-  news: {};
+  news: any;
   setTeamNews: React.Dispatch<React.SetStateAction<string>>;
   setSource: React.Dispatch<React.SetStateAction<string>>;
   setPlayerNews: React.Dispatch<React.SetStateAction<string>>;
