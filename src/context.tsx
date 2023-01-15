@@ -1,8 +1,32 @@
-import { useContext, createContext, useState, useEffect } from "react";
+import React, {
+  useContext,
+  PropsWithChildren,
+  createContext,
+  useState,
+  useEffect,
+} from "react";
 
-const AppContext = createContext();
+interface IAppContext {
+  data: {};
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  search: string;
+  isLoading: boolean;
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  news: {};
+  setTeamNews: React.Dispatch<React.SetStateAction<string>>;
+  setSource: React.Dispatch<React.SetStateAction<string>>;
+  setPlayerNews: React.Dispatch<React.SetStateAction<string>>;
+  teamNews: string;
+  source: string;
+  playerNews: string;
+  query: string;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
+}
 
-const AppProvider = ({ children }) => {
+const AppContext = createContext<IAppContext>({} as IAppContext);
+
+const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [data, setData] = useState([]);
   const [news, setNews] = useState([]);
   const [teamNews, setTeamNews] = useState("");
@@ -13,7 +37,7 @@ const AppProvider = ({ children }) => {
   const [query, setQuery] = useState("stats");
   const [search, setSearch] = useState("");
 
-  const options = {
+  const options: { method: string; headers: {} } = {
     method: "GET",
     headers: {
       "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
