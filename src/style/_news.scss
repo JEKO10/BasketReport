@@ -1,0 +1,68 @@
+.news {
+  max-width: 90vw;
+  margin: 3rem auto;
+  font-family: $primaryFont;
+
+  &Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 55px;
+
+    h1 {
+      font-size: 1.5rem;
+      max-width: 80%;
+    }
+
+    div div {
+      @include flex(flex-start, flex-start);
+      flex-direction: column;
+      margin-top: 1rem;
+
+      h2 {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        background-color: $primaryColor;
+        color: #fff;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-decoration: none;
+        transition: all 500ms ease;
+
+        &:hover {
+          color: #000;
+          background-color: $secondaryColor;
+        }
+      }
+    }
+  }
+}
+
+.filter {
+  @include flex(space-between, center);
+  margin: 3rem 0;
+
+  input,
+  select {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border: 3px solid $primaryColor;
+    border-radius: 15px;
+    font-family: $primaryFont;
+    outline: none;
+    transition: all 500ms ease;
+
+    &:hover {
+      box-shadow: -5px 6px 7px 0px $primaryColor;
+    }
+
+    &:focus {
+      border: 3px solid $secondaryColor;
+      box-shadow: -5px 6px 7px 0px $secondaryColor;
+    }
+  }
+}
