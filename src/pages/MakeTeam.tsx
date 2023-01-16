@@ -1,24 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 
 const MakeTeam: React.FC = () => {
+  const [startingFive, setStartingFive] = useState([
+    {
+      id: 0,
+      playerName: "",
+      age: "",
+      position: "",
+      imgUrl: "",
+    },
+  ]);
+  const [playerName, setPlayerName] = useState("");
+  const [age, setAge] = useState("");
+  const [position, setPosition] = useState("");
+  const [imgUrl, setImgUrl] = useState("");
+
+  const addPlayer = (
+    playerName: string,
+    age: string,
+    position: string,
+    imgUrl: string
+  ) => {
+    const newPlayer = {
+      id: Math.floor(Math.random() * 1000),
+      playerName,
+      age,
+      position,
+      imgUrl,
+    };
+
+    if (playerName && age && position && imgUrl) {
+      setStartingFive([...startingFive, newPlayer]);
+
+      setPlayerName("");
+      setAge("");
+      setPosition("");
+      setImgUrl("");
+    }
+  };
+
   return (
     <section className="yourTeam">
       <h1>Make your team</h1>
       <article className="team">
         <div className="starting">
           <h2>Starting 5</h2>
+          {startingFive.map((item) => (
+            <h1 key={item.id}>{item.playerName}</h1>
+          ))}
         </div>
         <div className="bench">
           <h2>Bench</h2>
         </div>
       </article>
       <article className="filter">
-        <input type="text" name="name" placeholder="Name" />
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value={playerName}
+          required
+          onChange={(e) => setPlayerName(e.target.value)}
+        />
         <div className="position-wrapper">
-          <select name="position">
-            <option value="none" selected disabled hidden>
-              Position
-            </option>
+          <select
+            name="position"
+            value={position}
+            required
+            onChange={(e) => setPosition(e.target.value)}
+          >
+            <option value="None">Position</option>
             <option value="PG">PG</option>
             <option value="SG">SG</option>
             <option value="SF">SF</option>
@@ -26,9 +77,30 @@ const MakeTeam: React.FC = () => {
             <option value="C">C</option>
           </select>
         </div>
-        <input type="text" name="image" placeholder="Age" />
-        <input type="text" name="IMG" placeholder="Image URL" />
-        <button>Add player</button>
+        <input
+          type="text"
+          name="age"
+          placeholder="Age"
+          value={age}
+          required
+          onChange={(e) => setAge(e.target.value)}
+        />
+        <input
+          type="text"
+          name="IMG"
+          placeholder="Image URL"
+          value={imgUrl}
+          required
+          onChange={(e) => setImgUrl(e.target.value)}
+        />
+        <button
+          onClick={() => {
+            addPlayer(playerName, age, position, imgUrl);
+            console.log(startingFive);
+          }}
+        >
+          Add player
+        </button>
       </article>
     </section>
   );

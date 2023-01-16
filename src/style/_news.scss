@@ -65,4 +65,25 @@
       box-shadow: -5px 6px 7px 0px $secondaryColor;
     }
   }
+
+  button {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border: 3px solid $primaryColor;
+    border-radius: 15px;
+    background-color: #fff;
+    color: $secondaryColor;
+    font-family: $primaryFont;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+    transition: all 500ms ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primaryColor;
+      color: #fff;
+    }
+  }
 }

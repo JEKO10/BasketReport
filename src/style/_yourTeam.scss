@@ -4,7 +4,7 @@
   margin: 3rem auto;
 
   .team {
-    @include flex(space-between, center);
+    @include flex(space-between, flex-start);
   }
 
   .filter {
