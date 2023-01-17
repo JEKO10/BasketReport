@@ -1,10 +1,41 @@
 .yourTeam {
   font-family: $primaryFont;
-  max-width: 70vw;
-  margin: 3rem auto;
+  max-width: 80vw;
+  margin: 1rem auto;
+
+  h1 {
+    font-size: 3rem;
+  }
 
   .team {
     @include flex(space-between, flex-start);
+
+    > div {
+      width: 50%;
+
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .singlePlayer {
+      @include flex(space-between, center);
+      background-color: #fff;
+      border: 1px solid #000;
+      margin: 0.5rem 0;
+      padding: 10px 15px;
+
+      > div {
+        @include flex(center, center);
+      }
+
+      img {
+        height: 64px;
+        width: 84px;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+      }
+    }
   }
 
   .filter {

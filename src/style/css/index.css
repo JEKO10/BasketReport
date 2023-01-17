@@ -214,8 +214,11 @@ header ul li#head {
 
 .yourTeam {
   font-family: "Roboto", Arial, sans-serif;
-  max-width: 70vw;
-  margin: 3rem auto;
+  max-width: 80vw;
+  margin: 1rem auto;
+}
+.yourTeam h1 {
+  font-size: 3rem;
 }
 .yourTeam .team {
   display: -webkit-box;
@@ -227,6 +230,44 @@ header ul li#head {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+.yourTeam .team > div {
+  width: 50%;
+}
+.yourTeam .team > div h2 {
+  text-align: center;
+}
+.yourTeam .team .singlePlayer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border: 1px solid #000;
+  margin: 0.5rem 0;
+  padding: 10px 15px;
+}
+.yourTeam .team .singlePlayer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.yourTeam .team .singlePlayer img {
+  height: 64px;
+  width: 84px;
+  border-radius: 100%;
+  margin-right: 0.5rem;
 }
 .yourTeam .filter {
   display: grid;

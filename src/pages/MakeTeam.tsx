@@ -45,8 +45,15 @@ const MakeTeam: React.FC = () => {
       <article className="team">
         <div className="starting">
           <h2>Starting 5</h2>
-          {startingFive.map((item) => (
-            <h1 key={item.id}>{item.playerName}</h1>
+          {startingFive.slice(1, startingFive.length).map((player) => (
+            <div key={player.id} className="singlePlayer">
+              <div>
+                <img src={player.imgUrl} alt={player.playerName} />
+                <h3>{player.playerName}</h3>
+              </div>
+              <h3>{player.position}</h3>
+              <h3>{player.age} years old</h3>
+            </div>
           ))}
         </div>
         <div className="bench">
