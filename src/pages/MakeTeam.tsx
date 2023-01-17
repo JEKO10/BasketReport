@@ -14,6 +14,7 @@ const MakeTeam: React.FC = () => {
   const [age, setAge] = useState("");
   const [position, setPosition] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const localData = JSON.parse(localStorage.getItem("team") || "");
 
   const addPlayer = (
     playerName: string,
@@ -31,6 +32,10 @@ const MakeTeam: React.FC = () => {
 
     if (playerName && age && position && imgUrl) {
       setStartingFive([...startingFive, newPlayer]);
+      localStorage.setItem(
+        "team",
+        JSON.stringify([...startingFive, newPlayer])
+      );
 
       setPlayerName("");
       setAge("");
@@ -45,7 +50,7 @@ const MakeTeam: React.FC = () => {
       <article className="team">
         <div className="starting">
           <h2>Starting 5</h2>
-          {startingFive.slice(1, startingFive.length).map((player) => (
+          {localData.slice(1, localData.length).map((player: any) => (
             <div key={player.id} className="singlePlayer">
               <div>
                 <img src={player.imgUrl} alt={player.playerName} />
@@ -53,6 +58,7 @@ const MakeTeam: React.FC = () => {
               </div>
               <h3>{player.position}</h3>
               <h3>{player.age} years old</h3>
+              <h5>del</h5>
             </div>
           ))}
         </div>
@@ -103,7 +109,6 @@ const MakeTeam: React.FC = () => {
         <button
           onClick={() => {
             addPlayer(playerName, age, position, imgUrl);
-            console.log(startingFive);
           }}
         >
           Add player
