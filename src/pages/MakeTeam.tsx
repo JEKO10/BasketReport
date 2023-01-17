@@ -23,7 +23,7 @@ const MakeTeam: React.FC = () => {
     imgUrl: string
   ) => {
     const newPlayer = {
-      id: Math.floor(Math.random() * 1000),
+      id: Math.floor(Math.random() * 1000) + 1,
       playerName,
       age,
       position,
@@ -32,16 +32,22 @@ const MakeTeam: React.FC = () => {
 
     if (playerName && age && position && imgUrl) {
       setStartingFive([...startingFive, newPlayer]);
-      localStorage.setItem(
-        "team",
-        JSON.stringify([...startingFive, newPlayer])
-      );
+
+      localStorage.setItem("team", JSON.stringify([...localData, newPlayer]));
 
       setPlayerName("");
       setAge("");
       setPosition("");
       setImgUrl("");
     }
+  };
+
+  const deletePlayer = (id: string | number) => {
+    const filteredPlayers = localData.filter((player: any) => {
+      return player.id !== id;
+    });
+    setStartingFive(filteredPlayers);
+    localStorage.setItem("team", JSON.stringify(filteredPlayers));
   };
 
   return (
@@ -58,7 +64,13 @@ const MakeTeam: React.FC = () => {
               </div>
               <h3>{player.position}</h3>
               <h3>{player.age} years old</h3>
-              <h5>del</h5>
+              <h5
+                onClick={() => {
+                  deletePlayer(player.id);
+                }}
+              >
+                Del
+              </h5>
             </div>
           ))}
         </div>
