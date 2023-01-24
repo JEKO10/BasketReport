@@ -27,6 +27,10 @@ const Home: React.FC = () => {
           </li>
           <li>
             <Link to="/news">News</Link>
+            <p>
+              This page retrieves news from NBA. You can filter it by player,
+              team and source.
+            </p>
           </li>
         </ul>
       </header>
