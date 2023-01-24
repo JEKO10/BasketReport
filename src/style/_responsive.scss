@@ -1,0 +1,20 @@
+@include mediaMediumLarge {
+  header {
+    flex-direction: column;
+
+    img {
+      width: 100%;
+      margin: 0 0 2rem 0;
+    }
+
+    ul {
+      width: 100%;
+    }
+  }
+}
+
+@include mediaSmall {
+  header ul {
+    padding: 20px 40px 20px 20px;
+  }
+}

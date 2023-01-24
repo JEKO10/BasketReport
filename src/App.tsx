@@ -11,7 +11,7 @@ import Error from "./pages/Error";
 const App: React.FC = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />
