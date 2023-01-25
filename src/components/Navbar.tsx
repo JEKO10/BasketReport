@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav>
-      <Link to="/" onClick={() => setQuery("stats")}>
+      <Link to="/" onClick={() => setQuery("")}>
         <img src={Logo} alt="Logo" />
       </Link>
       <ul>
@@ -50,8 +50,8 @@ const Navbar: React.FC = () => {
         <li>
           <Link
             to="/makeTeam"
-            className={query === "" ? "active" : ""}
-            onClick={() => setQuery("")}
+            className={query === "stats" ? "active" : ""}
+            onClick={() => setQuery("stats")}
           >
             Make your team
           </Link>

@@ -1,20 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const MakeTeam: React.FC = () => {
-  const [startingFive, setStartingFive] = useState([
-    {
-      id: 0,
-      playerName: "",
-      age: "",
-      position: "",
-      imgUrl: "",
-    },
-  ]);
   const [playerName, setPlayerName] = useState("");
   const [age, setAge] = useState("");
   const [position, setPosition] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-  const localData = JSON.parse(localStorage.getItem("team") || "");
+  const localData = JSON.parse(localStorage.getItem("team") || "[]");
 
   const addPlayer = (
     playerName: string,
@@ -29,10 +20,7 @@ const MakeTeam: React.FC = () => {
       position,
       imgUrl,
     };
-
     if (playerName && age && position && imgUrl) {
-      setStartingFive([...startingFive, newPlayer]);
-
       localStorage.setItem("team", JSON.stringify([...localData, newPlayer]));
 
       setPlayerName("");
@@ -46,7 +34,6 @@ const MakeTeam: React.FC = () => {
     const filteredPlayers = localData.filter((player: any) => {
       return player.id !== id;
     });
-    setStartingFive(filteredPlayers);
     localStorage.setItem("team", JSON.stringify(filteredPlayers));
   };
 
@@ -56,7 +43,7 @@ const MakeTeam: React.FC = () => {
       <article className="team">
         <div className="starting">
           <h2>Starting 5</h2>
-          {localData.slice(1, localData.length).map((player: any) => (
+          {localData.map((player: any) => (
             <div key={player.id} className="singlePlayer">
               <div>
                 <img src={player.imgUrl} alt={player.playerName} />
@@ -64,13 +51,7 @@ const MakeTeam: React.FC = () => {
               </div>
               <h3>{player.position}</h3>
               <h3>{player.age} years old</h3>
-              <h5
-                onClick={() => {
-                  deletePlayer(player.id);
-                }}
-              >
-                Del
-              </h5>
+              <button onClick={() => deletePlayer(player.id)}>Delete</button>
             </div>
           ))}
         </div>
@@ -86,6 +67,11 @@ const MakeTeam: React.FC = () => {
           value={playerName}
           required
           onChange={(e) => setPlayerName(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              addPlayer(playerName, age, position, imgUrl);
+            }
+          }}
         />
         <div className="position-wrapper">
           <select
@@ -109,6 +95,11 @@ const MakeTeam: React.FC = () => {
           value={age}
           required
           onChange={(e) => setAge(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              addPlayer(playerName, age, position, imgUrl);
+            }
+          }}
         />
         <input
           type="text"
@@ -117,12 +108,13 @@ const MakeTeam: React.FC = () => {
           value={imgUrl}
           required
           onChange={(e) => setImgUrl(e.target.value)}
-        />
-        <button
-          onClick={() => {
-            addPlayer(playerName, age, position, imgUrl);
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              addPlayer(playerName, age, position, imgUrl);
+            }
           }}
-        >
+        />
+        <button onClick={() => addPlayer(playerName, age, position, imgUrl)}>
           Add player
         </button>
       </article>
