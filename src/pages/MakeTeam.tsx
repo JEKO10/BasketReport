@@ -5,6 +5,7 @@ const MakeTeam: React.FC = () => {
   const [age, setAge] = useState("");
   const [position, setPosition] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [alert, setAlert] = useState("added");
   const localData = JSON.parse(localStorage.getItem("team") || "[]");
 
   const addPlayer = (
@@ -51,7 +52,14 @@ const MakeTeam: React.FC = () => {
               </div>
               <h3>{player.position}</h3>
               <h3>{player.age} years old</h3>
-              <button onClick={() => deletePlayer(player.id)}>Delete</button>
+              <button
+                onClick={() => {
+                  deletePlayer(player.id);
+                  setAlert("removed");
+                }}
+              >
+                Delete
+              </button>
             </div>
           ))}
         </div>
@@ -59,6 +67,7 @@ const MakeTeam: React.FC = () => {
           <h2>Bench</h2>
         </div>
       </article>
+      <p>Player {alert}!</p>
       <article className="filter">
         <input
           type="text"
@@ -114,7 +123,12 @@ const MakeTeam: React.FC = () => {
             }
           }}
         />
-        <button onClick={() => addPlayer(playerName, age, position, imgUrl)}>
+        <button
+          onClick={() => {
+            addPlayer(playerName, age, position, imgUrl);
+            setAlert("added");
+          }}
+        >
           Add player
         </button>
       </article>

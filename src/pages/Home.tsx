@@ -1,8 +1,12 @@
 import React from "react";
 import Banner from "../images/lbj.jpg";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 const Home: React.FC = () => {
+  const { setQuery } = useGlobalContext();
+  setQuery("");
+
   return (
     <section className="home">
       <header>
