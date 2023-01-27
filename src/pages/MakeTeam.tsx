@@ -6,7 +6,14 @@ const MakeTeam: React.FC = () => {
   const [position, setPosition] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [alert, setAlert] = useState("added");
+  const [isShowAlert, setIsShowAlert] = useState(false);
   const localData = JSON.parse(localStorage.getItem("team") || "[]");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsShowAlert(false);
+    }, 3000);
+  }, []);
 
   const addPlayer = (
     playerName: string,
@@ -28,6 +35,7 @@ const MakeTeam: React.FC = () => {
       setAge("");
       setPosition("");
       setImgUrl("");
+      setIsShowAlert(true);
     }
   };
 
@@ -36,6 +44,7 @@ const MakeTeam: React.FC = () => {
       return player.id !== id;
     });
     localStorage.setItem("team", JSON.stringify(filteredPlayers));
+    setIsShowAlert(true);
   };
 
   return (
@@ -67,7 +76,7 @@ const MakeTeam: React.FC = () => {
           <h2>Bench</h2>
         </div>
       </article>
-      <p>Player {alert}!</p>
+      {isShowAlert ? <p id="alert">Player was {alert}!</p> : ""}
       <article className="filter">
         <input
           type="text"
@@ -89,7 +98,7 @@ const MakeTeam: React.FC = () => {
             required
             onChange={(e) => setPosition(e.target.value)}
           >
-            <option value="None">Position</option>
+            <option value="">Position</option>
             <option value="PG">PG</option>
             <option value="SG">SG</option>
             <option value="SF">SF</option>
