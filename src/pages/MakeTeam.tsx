@@ -13,7 +13,7 @@ const MakeTeam: React.FC = () => {
     setTimeout(() => {
       setIsShowAlert(false);
     }, 3000);
-  }, []);
+  }, [isShowAlert]);
 
   const addPlayer = (
     playerName: string,
@@ -35,6 +35,7 @@ const MakeTeam: React.FC = () => {
       setAge("");
       setPosition("");
       setImgUrl("");
+      setAlert("added");
       setIsShowAlert(true);
     }
   };
@@ -44,6 +45,7 @@ const MakeTeam: React.FC = () => {
       return player.id !== id;
     });
     localStorage.setItem("team", JSON.stringify(filteredPlayers));
+    setAlert("removed");
     setIsShowAlert(true);
   };
 
@@ -53,7 +55,7 @@ const MakeTeam: React.FC = () => {
       <article className="team">
         <div className="starting">
           <h2>Starting 5</h2>
-          {localData.map((player: any) => (
+          {localData.slice(0, 5).map((player: any) => (
             <div key={player.id} className="singlePlayer">
               <div>
                 <img src={player.imgUrl} alt={player.playerName} />
@@ -64,7 +66,6 @@ const MakeTeam: React.FC = () => {
               <button
                 onClick={() => {
                   deletePlayer(player.id);
-                  setAlert("removed");
                 }}
               >
                 Delete
@@ -74,6 +75,23 @@ const MakeTeam: React.FC = () => {
         </div>
         <div className="bench">
           <h2>Bench</h2>
+          {localData.slice(5, localData.length).map((player: any) => (
+            <div key={player.id} className="singlePlayer">
+              <div>
+                <img src={player.imgUrl} alt={player.playerName} />
+                <h3>{player.playerName}</h3>
+              </div>
+              <h3>{player.position}</h3>
+              <h3>{player.age} years old</h3>
+              <button
+                onClick={() => {
+                  deletePlayer(player.id);
+                }}
+              >
+                Delete
+              </button>
+            </div>
+          ))}
         </div>
       </article>
       {isShowAlert ? <p id="alert">Player was {alert}!</p> : ""}
@@ -133,9 +151,9 @@ const MakeTeam: React.FC = () => {
           }}
         />
         <button
+          disabled={localData.length === 12 ? true : false}
           onClick={() => {
             addPlayer(playerName, age, position, imgUrl);
-            setAlert("added");
           }}
         >
           Add player
