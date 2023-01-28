@@ -5,8 +5,9 @@ const MakeTeam: React.FC = () => {
   const [age, setAge] = useState("");
   const [position, setPosition] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-  const [alert, setAlert] = useState("added");
+  const [alert, setAlert] = useState("All fields are required!");
   const [isShowAlert, setIsShowAlert] = useState(false);
+  const [updateDom, setUpdateDom] = useState(false);
   const localData = JSON.parse(localStorage.getItem("team") || "[]");
 
   useEffect(() => {
@@ -28,6 +29,9 @@ const MakeTeam: React.FC = () => {
       position,
       imgUrl,
     };
+    setAlert("All fields are required!");
+    setIsShowAlert(true);
+
     if (playerName && age && position && imgUrl) {
       localStorage.setItem("team", JSON.stringify([...localData, newPlayer]));
 
@@ -35,7 +39,7 @@ const MakeTeam: React.FC = () => {
       setAge("");
       setPosition("");
       setImgUrl("");
-      setAlert("added");
+      setAlert("Player was added!");
       setIsShowAlert(true);
     }
   };
@@ -45,8 +49,9 @@ const MakeTeam: React.FC = () => {
       return player.id !== id;
     });
     localStorage.setItem("team", JSON.stringify(filteredPlayers));
-    setAlert("removed");
+    setAlert("Player was removed!");
     setIsShowAlert(true);
+    setUpdateDom(!updateDom);
   };
 
   return (
@@ -94,7 +99,7 @@ const MakeTeam: React.FC = () => {
           ))}
         </div>
       </article>
-      {isShowAlert ? <p id="alert">Player was {alert}!</p> : ""}
+      {isShowAlert ? <p id="alert">{alert}</p> : ""}
       <article className="filter">
         <input
           type="text"
