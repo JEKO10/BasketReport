@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+let timer: any;
+
 const MakeTeam: React.FC = () => {
   const [playerName, setPlayerName] = useState("");
   const [age, setAge] = useState("");
@@ -10,11 +12,14 @@ const MakeTeam: React.FC = () => {
   const [updateDom, setUpdateDom] = useState(false);
   const localData = JSON.parse(localStorage.getItem("team") || "[]");
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsShowAlert(false);
-    }, 3000);
-  }, [isShowAlert]);
+  function hideAlert() {
+    setIsShowAlert(false);
+  }
+
+  function restartInterval() {
+    clearInterval(timer);
+    timer = setInterval(hideAlert, 3000);
+  }
 
   const addPlayer = (
     playerName: string,
@@ -31,6 +36,7 @@ const MakeTeam: React.FC = () => {
     };
     setAlert("All fields are required!");
     setIsShowAlert(true);
+    restartInterval();
 
     if (playerName && age && position && imgUrl) {
       localStorage.setItem("team", JSON.stringify([...localData, newPlayer]));
@@ -41,6 +47,7 @@ const MakeTeam: React.FC = () => {
       setImgUrl("");
       setAlert("Player was added!");
       setIsShowAlert(true);
+      restartInterval();
     }
   };
 
@@ -51,6 +58,7 @@ const MakeTeam: React.FC = () => {
     localStorage.setItem("team", JSON.stringify(filteredPlayers));
     setAlert("Player was removed!");
     setIsShowAlert(true);
+    restartInterval();
     setUpdateDom(!updateDom);
   };
 
