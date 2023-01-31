@@ -176,7 +176,7 @@ header ul {
   padding: 20px;
 }
 header ul li {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   font-weight: 700;
 }
 header ul li a {
@@ -269,6 +269,13 @@ header ul li#head {
   border-radius: 100%;
   margin-right: 0.5rem;
 }
+.yourTeam .team .singlePlayer button {
+  background-color: #d81f55;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .yourTeam #alert {
   position: fixed;
   top: 0.8rem;
@@ -278,6 +285,8 @@ header ul li#head {
   background-color: green;
   padding: 10px 20px;
   border-radius: 10px;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 .yourTeam .filter {
   display: grid;

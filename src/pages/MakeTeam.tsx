@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { GiLeg } from "react-icons/gi";
 
 let timer: any;
 
@@ -81,7 +82,7 @@ const MakeTeam: React.FC = () => {
                   deletePlayer(player.id);
                 }}
               >
-                Delete
+                <GiLeg />
               </button>
             </div>
           ))}
@@ -101,13 +102,15 @@ const MakeTeam: React.FC = () => {
                   deletePlayer(player.id);
                 }}
               >
-                Delete
+                <GiLeg />
               </button>
             </div>
           ))}
         </div>
       </article>
-      {isShowAlert ? <p id="alert">{alert}</p> : ""}
+      <p id="alert" style={{ opacity: isShowAlert ? 1 : 0 }}>
+        {alert}
+      </p>
       <article className="filter">
         <input
           type="text"
@@ -165,9 +168,7 @@ const MakeTeam: React.FC = () => {
         />
         <button
           disabled={localData.length === 12 ? true : false}
-          onClick={() => {
-            addPlayer(playerName, age, position, imgUrl);
-          }}
+          onClick={() => addPlayer(playerName, age, position, imgUrl)}
         >
           Add player
         </button>
