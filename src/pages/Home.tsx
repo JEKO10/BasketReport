@@ -16,26 +16,26 @@ const Home: React.FC = () => {
         <img src={Banner} alt="Banner" />
         <ul className="headlines">
           <li id="head">Headlines</li>
-          <li onClick={() => setQuery("players")}>
+          <li>
             <Link to="/players">Players</Link>
             <p>This page retrieves all players from all seasons.</p>
           </li>
-          <li onClick={() => setQuery("teams")}>
+          <li>
             <Link to="/teams">Teams</Link>
             <p>This page retrieves all teams for the current season.</p>
           </li>
-          <li onClick={() => setQuery("games")}>
+          <li>
             <Link to="/games">Games</Link>
             <p>Seasons are represented by the year they began.</p>
           </li>
-          <li onClick={() => setQuery("season_averages")}>
+          <li>
             <Link to="/news">News</Link>
             <p>
               This page retrieves news from NBA. You can filter it by player,
               team and source.
             </p>
           </li>
-          <li onClick={() => setQuery("stats")}>
+          <li>
             <Link to="/makeTeam">Make your team</Link>
           </li>
         </ul>

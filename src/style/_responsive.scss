@@ -13,6 +13,48 @@
   }
 }
 
+@include mediaMedium {
+  nav {
+    ul {
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      height: 90.5%;
+      width: 100%;
+      z-index: 1;
+      transform: translateX(0);
+      transition: all 500ms ease-out;
+
+      li {
+        margin: 20px 50px;
+        padding: 0 50px 15px 0;
+        border-bottom: 2px solid #808080;
+
+        a {
+          font-weight: 800;
+          opacity: 0.7;
+
+          &:hover {
+            box-shadow: inset 0 -4px 0 -1px #fff;
+          }
+        }
+      }
+
+      &.hide {
+        transform: translateX(-1000px);
+      }
+    }
+
+    .menuBtn {
+      display: block;
+    }
+  }
+}
+
 @include mediaSmall {
   header ul {
     padding: 20px 40px 20px 20px;

@@ -1,7 +1,12 @@
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 
 const Teams: React.FC = () => {
-  const { data, isLoading } = useGlobalContext();
+  const { data, setQuery, isLoading } = useGlobalContext();
+
+  useEffect(() => {
+    setQuery("teams");
+  }, []);
 
   return (
     <>
