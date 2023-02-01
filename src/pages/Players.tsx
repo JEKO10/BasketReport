@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 
 const Players: React.FC = () => {
-  const { data, setSearch, isLoading } = useGlobalContext();
+  const { data, setSearch, setQuery, isLoading } = useGlobalContext();
+
+  useEffect(() => {
+    setQuery("players");
+  }, []);
 
   return (
     <section>

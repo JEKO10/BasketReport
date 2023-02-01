@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 
 const News: React.FC = () => {
-  const { news, setTeamNews, setSource, setPlayerNews, isLoading } =
+  const { news, setTeamNews, setSource, setPlayerNews, setQuery, isLoading } =
     useGlobalContext();
+
+  useEffect(() => {
+    setQuery("season_averages");
+  }, []);
 
   return (
     <section className="news">

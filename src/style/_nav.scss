@@ -2,8 +2,63 @@ nav {
   @include flex(flex-start, center);
   background-color: #000;
   color: #fff;
-  padding: 15px 50px;
+  padding: 15px 20px;
   font-family: $primaryFont;
+
+  .menuBtn {
+    position: relative;
+    z-index: 2;
+    height: 20px;
+    width: 28px;
+    margin-right: 3rem;
+    display: none;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+
+    .menuBurger {
+      position: absolute;
+      top: 0.5rem;
+      right: 0;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      transition: all 500ms ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        width: 28px;
+        height: 2px;
+        background: #fff;
+        transition: all 500ms ease-in-out;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        transition: all 500ms ease-in-out;
+      }
+
+      &.open {
+        transform: rotate(720deg);
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg) translate(5px, 8px);
+        }
+
+        &::after {
+          width: 28px;
+          transform: rotate(-45deg) translate(3px, -7px);
+        }
+      }
+    }
+  }
 
   ul {
     @include flex(space-between, center);
@@ -12,7 +67,7 @@ nav {
     li {
       font-size: 1rem;
       font-weight: 700;
-      margin: 0 50px;
+      margin: 0 35px;
       cursor: pointer;
 
       a {
