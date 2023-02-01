@@ -8,7 +8,7 @@ const MakeTeam: React.FC = () => {
   const [age, setAge] = useState("");
   const [position, setPosition] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-  const [alert, setAlert] = useState("All fields are required!");
+  const [alert, setAlert] = useState(0);
   const [isShowAlert, setIsShowAlert] = useState(false);
   const [updateDom, setUpdateDom] = useState(false);
   const localData = JSON.parse(localStorage.getItem("team") || "[]");
@@ -35,20 +35,29 @@ const MakeTeam: React.FC = () => {
       position,
       imgUrl,
     };
-    setAlert("All fields are required!");
+
+    setAlert(0);
     setIsShowAlert(true);
     restartInterval();
 
-    if (playerName && age && position && imgUrl) {
+    if (localData.length === 12) {
+      setAlert(3);
+      setIsShowAlert(true);
+    } else if (
+      localData.length <= 12 &&
+      playerName &&
+      age &&
+      position &&
+      imgUrl
+    ) {
       localStorage.setItem("team", JSON.stringify([...localData, newPlayer]));
 
       setPlayerName("");
       setAge("");
       setPosition("");
       setImgUrl("");
-      setAlert("Player was added!");
+      setAlert(1);
       setIsShowAlert(true);
-      restartInterval();
     }
   };
 
@@ -57,7 +66,8 @@ const MakeTeam: React.FC = () => {
       return player.id !== id;
     });
     localStorage.setItem("team", JSON.stringify(filteredPlayers));
-    setAlert("Player was removed!");
+
+    setAlert(2);
     setIsShowAlert(true);
     restartInterval();
     setUpdateDom(!updateDom);
@@ -108,8 +118,47 @@ const MakeTeam: React.FC = () => {
           ))}
         </div>
       </article>
-      <p id="alert" style={{ opacity: isShowAlert ? 1 : 0 }}>
-        {alert}
+      <p
+        id="alert"
+        style={
+          isShowAlert && alert === 0
+            ? {
+                visibility: "visible",
+                opacity: 1,
+                transform: `translate(10px, 0)`,
+              }
+            : isShowAlert && alert === 1
+            ? {
+                visibility: "visible",
+                opacity: 1,
+                transform: `translate(15px, 0)`,
+              }
+            : isShowAlert && alert === 2
+            ? {
+                visibility: "visible",
+                opacity: 1,
+                transform: `translate(20px, 0)`,
+              }
+            : isShowAlert && alert === 3
+            ? {
+                visibility: "visible",
+                opacity: 1,
+                transform: `translate(25px, 0)`,
+              }
+            : {
+                visibility: "hidden",
+                opacity: 0,
+                transform: `translate(0, 0)`,
+              }
+        }
+      >
+        {alert === 0
+          ? "All fields are required!"
+          : alert === 1
+          ? "Player was added!"
+          : alert === 2
+          ? "Player was removed!"
+          : "Your roster is full!"}
       </p>
       <article className="filter">
         <input
@@ -167,7 +216,7 @@ const MakeTeam: React.FC = () => {
           }}
         />
         <button
-          disabled={localData.length === 12 ? true : false}
+          // disabled={localData.length === 12 ? true : false}
           onClick={() => addPlayer(playerName, age, position, imgUrl)}
         >
           Add player
