@@ -31,7 +31,7 @@ const Players: React.FC = () => {
                 <h2>
                   {player.first_name} {player.last_name}
                 </h2>
-                <h2>Position: {player.position}</h2>
+                {player.position ? <h2>Position: {player.position}</h2> : ""}
                 {player.height_feet ? (
                   <h2>
                     Height: {player.height_feet}′ {player.height_inches}′′

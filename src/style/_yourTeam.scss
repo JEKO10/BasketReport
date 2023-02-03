@@ -63,6 +63,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
 
+    input,
+    select {
+      margin: 0;
+    }
+
     button {
       grid-column: span 2;
     }
