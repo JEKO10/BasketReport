@@ -11,6 +11,20 @@
       width: 100%;
     }
   }
+
+  .news .filter {
+    flex-wrap: wrap;
+    margin: 0;
+
+    input {
+      margin: 0.5rem 1rem;
+
+      &:last-child {
+        margin: 1rem auto;
+        width: 50%;
+      }
+    }
+  }
 }
 
 @include mediaMedium {
@@ -56,6 +70,15 @@
 
     .menuBtn {
       display: block;
+    }
+  }
+
+  .news .filter input {
+    margin: 1rem auto;
+    width: 90%;
+
+    &:last-child {
+      width: 90%;
     }
   }
 

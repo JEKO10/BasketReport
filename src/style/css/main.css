@@ -436,6 +436,18 @@ header ul li#head {
   header ul {
     width: 100%;
   }
+  .news .filter {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0;
+  }
+  .news .filter input {
+    margin: 0.5rem 1rem;
+  }
+  .news .filter input:last-child {
+    margin: 1rem auto;
+    width: 50%;
+  }
 }
 @media screen and (max-width: 768px) {
   nav ul {
@@ -484,6 +496,13 @@ header ul li#head {
   }
   nav .menuBtn {
     display: block;
+  }
+  .news .filter input {
+    margin: 1rem auto;
+    width: 90%;
+  }
+  .news .filter input:last-child {
+    width: 90%;
   }
   .mainSection {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
