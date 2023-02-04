@@ -1,3 +1,29 @@
+@include mediaLarge {
+  .yourTeam {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      order: -2;
+      margin-bottom: 0;
+    }
+
+    .filter {
+      order: -1;
+    }
+
+    .team {
+      align-items: center;
+      flex-direction: column;
+
+      > div {
+        margin-bottom: 3rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
 @include mediaMediumLarge {
   header {
     flex-direction: column;
@@ -58,7 +84,8 @@
           }
 
           &.active {
-            color: $primaryColor;
+            opacity: 1;
+            color: #fff;
           }
         }
       }
@@ -84,6 +111,36 @@
 
   .mainSection {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .yourTeam {
+    .filter {
+      gap: 20px;
+
+      > * {
+        grid-column: span 2;
+      }
+    }
+
+    .team .singlePlayer {
+      flex-flow: row wrap;
+
+      > div {
+        flex: 100%;
+        margin-bottom: 2rem;
+        flex-direction: column;
+
+        img {
+          margin: 0 0 1rem 0;
+          height: 80px;
+          width: 95px;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+        }
+      }
+    }
   }
 }
 

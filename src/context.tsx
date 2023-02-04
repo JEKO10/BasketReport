@@ -34,7 +34,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [playerNews, setPlayerNews] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("stats");
+  const [query, setQuery] = useState("");
   const [search, setSearch] = useState("");
 
   const options: { method: string; headers: {} } = {
