@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/NBA-Information/static/css/main.8afc19c3.css",
-    "main.js": "/NBA-Information/static/js/main.13f91bf7.js",
+    "main.css": "/NBA-Information/static/css/main.13909e2c.css",
+    "main.js": "/NBA-Information/static/js/main.1b068060.js",
     "static/js/787.c39c6312.chunk.js": "/NBA-Information/static/js/787.c39c6312.chunk.js",
     "static/media/lbj.jpg": "/NBA-Information/static/media/lbj.389da4b214f2fc030fc7.jpg",
     "static/media/logo.svg": "/NBA-Information/static/media/logo.b037e7a41f5b508a41bea521f2a20322.svg",
     "index.html": "/NBA-Information/index.html",
-    "main.8afc19c3.css.map": "/NBA-Information/static/css/main.8afc19c3.css.map",
-    "main.13f91bf7.js.map": "/NBA-Information/static/js/main.13f91bf7.js.map",
+    "main.13909e2c.css.map": "/NBA-Information/static/css/main.13909e2c.css.map",
+    "main.1b068060.js.map": "/NBA-Information/static/js/main.1b068060.js.map",
     "787.c39c6312.chunk.js.map": "/NBA-Information/static/js/787.c39c6312.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8afc19c3.css",
-    "static/js/main.13f91bf7.js"
+    "static/css/main.13909e2c.css",
+    "static/js/main.1b068060.js"
   ]
 }
