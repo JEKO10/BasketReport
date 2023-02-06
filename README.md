@@ -32,4 +32,4 @@ I am impressed by TypeScript, especially for its quick error tracking and improv
 
 ## Live preview
 
-[Click for live preview](https://jeko10.github.io/NBA-Information/)
+[Click for live preview](https://jeko10.github.io/BasketReport/)
