@@ -1,6 +1,6 @@
 <h1 align="center">
-  NBA-Information <br/> 
-  (React)
+  BasketReport <br/> 
+  (React-TypeScript)
 </h1>
 <br>
 
