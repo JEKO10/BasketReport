@@ -1,6 +1,6 @@
 <h1 align="center">
-  NBA-Information <br/> 
-  (React)
+  BasketReport <br/> 
+  (React-TypeScript)
 </h1>
 <br>
 
@@ -32,4 +32,4 @@ I am impressed by TypeScript, especially for its quick error tracking and improv
 
 ## Live preview
 
-[Click for live preview](https://jeko10.github.io/NBA-Information/)
+[Click for live preview](https://jeko10.github.io/BasketReport/)
