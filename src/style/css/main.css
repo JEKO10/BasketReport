@@ -111,6 +111,7 @@ nav ul li a.active {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px 55px;
+  margin-top: 6rem;
 }
 .newsContainer h1 {
   font-size: 1.5rem;

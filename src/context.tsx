@@ -36,7 +36,6 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
       );
       const data = await response.json();
       setData(data);
-      console.log(data);
     } catch (error) {
       console.error(error);
     }
@@ -52,6 +51,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
       );
       const newsData = await responseNews.json();
       setNews(newsData);
+      console.log(newsData);
     } catch (error) {
       console.error(error);
     }
@@ -62,9 +62,9 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     fetchData();
   }, [query, search, page]);
 
-  // useEffect(() => {
-  // fetchNews();
-  // }, [news, teamNews, playerNews, source]);
+  useEffect(() => {
+    fetchNews();
+  }, [teamNews, source, playerNews]);
 
   return (
     <AppContext.Provider

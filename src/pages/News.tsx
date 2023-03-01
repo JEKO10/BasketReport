@@ -41,19 +41,23 @@ const News: React.FC = () => {
         <div className="loading"></div>
       ) : (
         <article className="newsContainer">
-          {news.map((item: any) => (
-            <div key={item.url}>
-              <h1>{item.title}</h1>
-              <div>
-                <h2>
-                  Source: <span>{item.source}</span>
-                </h2>
-                <a href={item.url} target="_blank" rel="noreferrer noopener">
-                  Read more
-                </a>
+          {news.map((item: any) => {
+            const id = Math.floor(Math.random() * 10000 + 1);
+
+            return (
+              <div key={id}>
+                <h1>{item.title}</h1>
+                <div>
+                  <h2>
+                    Source: <span>{item.source}</span>
+                  </h2>
+                  <a href={item.url} target="_blank" rel="noreferrer noopener">
+                    Read more
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </article>
       )}
     </section>

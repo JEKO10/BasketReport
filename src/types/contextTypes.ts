@@ -39,6 +39,12 @@ export interface IAPIData {
   meta: IMeta;
 }
 
+interface INews {
+  source: string;
+  title: string;
+  url: string;
+}
+
 export interface IAppContext {
   data: IAPIData;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
@@ -46,7 +52,7 @@ export interface IAppContext {
   isLoading: boolean;
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
-  news: any;
+  news: INews[];
   setTeamNews: React.Dispatch<React.SetStateAction<string>>;
   setSource: React.Dispatch<React.SetStateAction<string>>;
   setPlayerNews: React.Dispatch<React.SetStateAction<string>>;
