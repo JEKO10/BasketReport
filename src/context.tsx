@@ -5,29 +5,12 @@ import React, {
   useState,
   useEffect,
 } from "react";
-
-interface IAppContext {
-  data: any;
-  setSearch: React.Dispatch<React.SetStateAction<string>>;
-  search: string;
-  isLoading: boolean;
-  page: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
-  news: any;
-  setTeamNews: React.Dispatch<React.SetStateAction<string>>;
-  setSource: React.Dispatch<React.SetStateAction<string>>;
-  setPlayerNews: React.Dispatch<React.SetStateAction<string>>;
-  teamNews: string;
-  source: string;
-  playerNews: string;
-  query: string;
-  setQuery: React.Dispatch<React.SetStateAction<string>>;
-}
+import { IAppContext, IAPIData } from "./types/contextTypes";
 
 const AppContext = createContext<IAppContext>({} as IAppContext);
 
 const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<IAPIData>({} as IAPIData);
   const [news, setNews] = useState([]);
   const [teamNews, setTeamNews] = useState("");
   const [source, setSource] = useState("");
@@ -53,6 +36,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
       );
       const data = await response.json();
       setData(data);
+      console.log(data);
     } catch (error) {
       console.error(error);
     }

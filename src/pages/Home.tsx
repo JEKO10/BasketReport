@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
 const Home: React.FC = () => {
-  const { setQuery } = useGlobalContext();
+  const { setQuery, query } = useGlobalContext();
 
   useEffect(() => {
     setQuery("");
