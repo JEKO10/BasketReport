@@ -1,5 +1,5 @@
-@import "config", "nav", "news", "header", "mainSection", "yourTeam", "error",
-  "responsive";
+@import "config", "nav", "news", "header", "mainSection", "yourTeam",
+  "pagination", "error", "responsive";
 
 * {
   margin: 0;
@@ -9,20 +9,6 @@
 
 body {
   background-color: #f6f6f6;
-}
-
-.pagination {
-  @include flex(space-between, center);
-  list-style-type: none;
-  margin-top: 10rem;
-  flex-wrap: wrap;
-
-  li {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 50px;
-    cursor: pointer;
-  }
 }
 
 .loading {

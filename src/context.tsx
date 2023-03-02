@@ -32,7 +32,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://www.balldontlie.io/api/v1/${query}?page=${page}&per_page=${50}&search=${search}`
+        `https://www.balldontlie.io/api/v1/${query}?page=${page}&per_page=${30}&search=${search}`
       );
       const data = await response.json();
       setData(data);
@@ -51,7 +51,6 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
       );
       const newsData = await responseNews.json();
       setNews(newsData);
-      console.log(newsData);
     } catch (error) {
       console.error(error);
     }

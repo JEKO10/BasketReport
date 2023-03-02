@@ -1,0 +1,13 @@
+.pagination {
+  @include flex(space-between, center);
+  list-style-type: none;
+  margin-top: 10rem;
+  flex-wrap: wrap;
+
+  li {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 50px;
+    cursor: pointer;
+  }
+}

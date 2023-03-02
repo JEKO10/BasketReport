@@ -415,6 +415,28 @@ header ul li#head {
   text-align: center;
 }
 
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  margin-top: 10rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.pagination li {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 50px;
+  cursor: pointer;
+}
+
 .error {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -673,28 +695,6 @@ header ul li#head {
 
 body {
   background-color: #f6f6f6;
-}
-
-.pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  list-style-type: none;
-  margin-top: 10rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.pagination li {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 50px;
-  cursor: pointer;
 }
 
 .loading {

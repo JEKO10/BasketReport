@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
+import Pagination from "../components/Pagination";
 
 const Players: React.FC = () => {
   const { data, setSearch, setQuery, isLoading } = useGlobalContext();
@@ -47,6 +48,7 @@ const Players: React.FC = () => {
           })}
         </article>
       )}
+      <Pagination />
     </section>
   );
 };
