@@ -39,7 +39,7 @@ const News: React.FC = () => {
       </article>
       {isLoading ? (
         <div className="loading"></div>
-      ) : (
+      ) : news.length > 3 ? (
         <article className="newsContainer">
           {news.map((item: any) => {
             const id = Math.floor(Math.random() * 10000 + 1);
@@ -59,6 +59,10 @@ const News: React.FC = () => {
             );
           })}
         </article>
+      ) : (
+        <h2 id="error">
+          There is no news! Please try something else or try later.
+        </h2>
       )}
     </section>
   );

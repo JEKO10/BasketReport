@@ -3,6 +3,12 @@
   margin: 3rem auto;
   font-family: $primaryFont;
 
+  #error {
+    color: #ff0000;
+    margin-top: 15rem;
+    text-align: center;
+  }
+
   &Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

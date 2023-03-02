@@ -107,6 +107,11 @@ nav ul li a.active {
   margin: 3rem auto;
   font-family: "Roboto", Arial, sans-serif;
 }
+.news #error {
+  color: #ff0000;
+  margin-top: 15rem;
+  text-align: center;
+}
 .newsContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -578,6 +583,28 @@ header ul li#head {
 @media screen and (max-width: 576px) {
   .mainSection div h2 {
     font-size: 1.3rem;
+  }
+  .newsContainer {
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+  .newsContainer h1 {
+    max-width: 100%;
+  }
+  .newsContainer div {
+    margin-bottom: 2rem;
+  }
+  .newsContainer div div {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .newsContainer div div h2 {
+    margin: 1rem 0 2rem 0;
+  }
+  .newsContainer div div a {
+    font-size: 1.3rem;
+    padding: 10px 25px;
   }
 }
 @media screen and (max-width: 480px) {

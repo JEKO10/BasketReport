@@ -148,6 +148,32 @@
   .mainSection div h2 {
     font-size: 1.3rem;
   }
+
+  .newsContainer {
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+
+    h1 {
+      max-width: 100%;
+    }
+
+    div {
+      margin-bottom: 2rem;
+
+      div {
+        align-items: center;
+
+        h2 {
+          margin: 1rem 0 2rem 0;
+        }
+
+        a {
+          font-size: 1.3rem;
+          padding: 10px 25px;
+        }
+      }
+    }
+  }
 }
 
 @include mediaSmall {
