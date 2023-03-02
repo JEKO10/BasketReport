@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
+import newsImg from "../images/newsImg.jpg";
 
 const News: React.FC = () => {
   const { news, setTeamNews, setSource, setPlayerNews, setQuery, isLoading } =
@@ -45,7 +46,8 @@ const News: React.FC = () => {
             const id = Math.floor(Math.random() * 10000 + 1);
 
             return (
-              <div key={id}>
+              <div key={id} className="singleNew">
+                <img src={newsImg} alt="newsImg" />
                 <h1>{item.title}</h1>
                 <div>
                   <h2>

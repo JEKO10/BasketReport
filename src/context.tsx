@@ -46,7 +46,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setIsLoading(true);
     try {
       const responseNews = await fetch(
-        `https://nba-latest-news.p.rapidapi.com/articles?team=${teamNews}&source=${source}&player=${playerNews}&limit=25`,
+        `https://nba-latest-news.p.rapidapi.com/articles?team=${teamNews}&source=${source}&player=${playerNews}`,
         options
       );
       const newsData = await responseNews.json();
