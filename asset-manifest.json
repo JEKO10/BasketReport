@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/BasketReport/static/css/main.be564360.css",
-    "main.js": "/BasketReport/static/js/main.87d64992.js",
+    "main.css": "/BasketReport/static/css/main.2b3f46ef.css",
+    "main.js": "/BasketReport/static/js/main.f13c12e6.js",
     "static/js/787.c39c6312.chunk.js": "/BasketReport/static/js/787.c39c6312.chunk.js",
     "static/media/lbj.jpg": "/BasketReport/static/media/lbj.389da4b214f2fc030fc7.jpg",
+    "static/media/newsImg.jpg": "/BasketReport/static/media/newsImg.ecac7728909c4b1355b2.jpg",
     "static/media/logo.svg": "/BasketReport/static/media/logo.b037e7a41f5b508a41bea521f2a20322.svg",
     "index.html": "/BasketReport/index.html",
-    "main.be564360.css.map": "/BasketReport/static/css/main.be564360.css.map",
-    "main.87d64992.js.map": "/BasketReport/static/js/main.87d64992.js.map",
+    "main.2b3f46ef.css.map": "/BasketReport/static/css/main.2b3f46ef.css.map",
+    "main.f13c12e6.js.map": "/BasketReport/static/js/main.f13c12e6.js.map",
     "787.c39c6312.chunk.js.map": "/BasketReport/static/js/787.c39c6312.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be564360.css",
-    "static/js/main.87d64992.js"
+    "static/css/main.2b3f46ef.css",
+    "static/js/main.f13c12e6.js"
   ]
 }
