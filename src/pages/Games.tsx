@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
+import Pagination from "../components/Pagination";
 
 const Games: React.FC = () => {
   const { data, setQuery, isLoading } = useGlobalContext();
@@ -30,6 +31,7 @@ const Games: React.FC = () => {
           })}
         </article>
       )}
+      <Pagination />
     </section>
   );
 };

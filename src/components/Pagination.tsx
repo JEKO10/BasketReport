@@ -1,33 +1,33 @@
 import { useGlobalContext } from "../context";
+import ReactPaginate from "react-paginate";
 
 const Pagination = () => {
-  const { data, page, setPage } = useGlobalContext();
-  const pageNumbers = [];
-  console.log(data.meta);
+  const { data, setPage } = useGlobalContext();
 
-  for (
-    let i = 1;
-    i < Math.ceil(data?.meta.total_count / data?.meta.per_page);
-    i++
-  ) {
-    pageNumbers.push(i);
-  }
+  const handlePageClick = ({
+    selected: selectedPage,
+  }: {
+    selected: number;
+  }) => {
+    setPage(selectedPage);
+
+    window.scroll({
+      top: 0,
+    });
+  };
 
   return (
     <section>
-      <ul className="pagination">
-        {pageNumbers.slice(page - 1, page + 4).map((item) => (
-          <li
-            value={item}
-            key={item}
-            onClick={(e) => {
-              setPage(e.currentTarget.value);
-            }}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
+      <ReactPaginate
+        previousLabel={"Prev"}
+        nextLabel={"Next"}
+        pageCount={data?.meta?.total_pages}
+        onPageChange={handlePageClick}
+        containerClassName="pagination"
+        nextLinkClassName="next"
+        previousLinkClassName="prev"
+        activeClassName="active"
+      />
     </section>
   );
 };

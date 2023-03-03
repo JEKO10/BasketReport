@@ -52,6 +52,8 @@ export interface IAppContext {
   isLoading: boolean;
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  perPage: number;
+  setPerPage: React.Dispatch<React.SetStateAction<number>>;
   news: INews[];
   setTeamNews: React.Dispatch<React.SetStateAction<string>>;
   setSource: React.Dispatch<React.SetStateAction<string>>;

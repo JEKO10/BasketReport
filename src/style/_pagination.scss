@@ -1,13 +1,28 @@
 .pagination {
-  @include flex(space-between, center);
+  font-family: $primaryFont;
+  @include flex(center, center);
   list-style-type: none;
-  margin-top: 10rem;
-  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  cursor: pointer;
 
-  li {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 50px;
-    cursor: pointer;
+  .active a {
+    background-color: $primaryColor;
+    color: #fff;
+  }
+
+  a {
+    padding: 10px 15px;
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+
+    &:hover {
+      background-color: rgba(255, 38, 37, 0.7);
+      color: #fff;
+    }
+
+    &.next,
+    &.prev {
+      font-weight: bold;
+    }
   }
 }

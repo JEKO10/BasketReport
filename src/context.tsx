@@ -17,6 +17,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [playerNews, setPlayerNews] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(30);
   const [query, setQuery] = useState("");
   const [search, setSearch] = useState("");
 
@@ -32,7 +33,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://www.balldontlie.io/api/v1/${query}?page=${page}&per_page=${30}&search=${search}`
+        `https://www.balldontlie.io/api/v1/${query}?page=${page}&per_page=${perPage}&search=${search}`
       );
       const data = await response.json();
       setData(data);
@@ -74,6 +75,8 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
         isLoading,
         page,
         setPage,
+        perPage,
+        setPerPage,
         news,
         setTeamNews,
         setSource,
