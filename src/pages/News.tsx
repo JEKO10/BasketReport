@@ -3,9 +3,23 @@ import { useGlobalContext } from "../context";
 import newsImg from "../images/newsImg.jpg";
 
 const News: React.FC = () => {
-  const { news, setTeamNews, setSource, setPlayerNews, setQuery, isLoading } =
-    useGlobalContext();
-  console.log(news.length);
+  const {
+    news,
+    page,
+    setPage,
+    setTeamNews,
+    setSource,
+    setPlayerNews,
+    setQuery,
+    isLoading,
+  } = useGlobalContext();
+  const pageNews = [];
+  const offset = page * 9;
+  const currentPageData = news.slice(offset, offset + 12);
+
+  for (let i = 1; i < Math.ceil(news.length / 12); i++) {
+    pageNews.push(i);
+  }
 
   useEffect(() => {
     setQuery("season_averages");
@@ -43,8 +57,8 @@ const News: React.FC = () => {
         <div className="loading"></div>
       ) : news.length > 3 ? (
         <article className="newsContainer">
-          {news.map((item: any) => {
-            const id = Math.floor(Math.random() * 10000 + 1);
+          {currentPageData.map((item: any) => {
+            const id = Math.floor(Math.random() * 1000000);
 
             return (
               <div key={id} className="singleNew">
@@ -66,6 +80,22 @@ const News: React.FC = () => {
         <h2 id="error">
           There is no news! Please try something else or try later.
         </h2>
+      )}
+      {!isLoading ? (
+        <ul className="pagination">
+          {pageNews.map((pageNumber) => (
+            <li
+              className={page === pageNumber ? "active" : ""}
+              key={pageNumber}
+              value={pageNumber}
+              onClick={(e) => setPage(e.currentTarget.value)}
+            >
+              {pageNumber}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        ""
       )}
     </section>
   );
