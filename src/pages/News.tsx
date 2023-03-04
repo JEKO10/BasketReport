@@ -5,6 +5,7 @@ import newsImg from "../images/newsImg.jpg";
 const News: React.FC = () => {
   const { news, setTeamNews, setSource, setPlayerNews, setQuery, isLoading } =
     useGlobalContext();
+  console.log(news.length);
 
   useEffect(() => {
     setQuery("season_averages");

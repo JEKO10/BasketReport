@@ -3,10 +3,11 @@ import { useGlobalContext } from "../context";
 import Pagination from "../components/Pagination";
 
 const Games: React.FC = () => {
-  const { data, setQuery, isLoading } = useGlobalContext();
+  const { data, setPage, setQuery, isLoading } = useGlobalContext();
 
   useEffect(() => {
     setQuery("games");
+    setPage(1);
   }, []);
 
   return (
@@ -31,7 +32,7 @@ const Games: React.FC = () => {
           })}
         </article>
       )}
-      <Pagination />
+      {!isLoading ? <Pagination /> : ""}
     </section>
   );
 };

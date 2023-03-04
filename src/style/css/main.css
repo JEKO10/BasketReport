@@ -430,21 +430,26 @@ header ul li#head {
   margin-bottom: 4rem;
   cursor: pointer;
 }
-.pagination .active a {
+.pagination li {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.pagination li.active {
   background-color: #0165ff;
   color: #fff;
 }
-.pagination a {
-  padding: 10px 15px;
-  border: 1px solid #0165ff;
-  color: #0165ff;
-}
-.pagination a:hover {
-  background-color: rgba(255, 38, 37, 0.7);
+.pagination li:hover {
+  background-color: #d81f55;
   color: #fff;
 }
-.pagination a.next, .pagination a.prev {
+.pagination li.next, .pagination li.prev {
   font-weight: bold;
+}
+.pagination li.next svg, .pagination li.prev svg {
+  -webkit-transform: translateY(11%);
+          transform: translateY(11%);
 }
 
 .error {

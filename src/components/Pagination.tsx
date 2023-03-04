@@ -1,33 +1,63 @@
 import { useGlobalContext } from "../context";
-import ReactPaginate from "react-paginate";
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import { MdFirstPage, MdLastPage } from "react-icons/md";
 
 const Pagination = () => {
-  const { data, setPage } = useGlobalContext();
+  const { data, page, setPage } = useGlobalContext();
+  const pageNumbers = [];
 
-  const handlePageClick = ({
-    selected: selectedPage,
-  }: {
-    selected: number;
-  }) => {
-    setPage(selectedPage);
-
-    window.scroll({
-      top: 0,
-    });
-  };
+  for (let i = 0; i <= data?.meta?.total_pages; i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <section>
-      <ReactPaginate
-        previousLabel={"Prev"}
-        nextLabel={"Next"}
-        pageCount={data?.meta?.total_pages}
-        onPageChange={handlePageClick}
-        containerClassName="pagination"
-        nextLinkClassName="next"
-        previousLinkClassName="prev"
-        activeClassName="active"
-      />
+      <ul className="pagination">
+        <li className="prev" onClick={() => setPage(1)}>
+          <MdFirstPage />
+        </li>
+        <li
+          className="prev"
+          onClick={() => {
+            page === 1 ? setPage(pageNumbers.length - 1) : setPage(page - 1);
+          }}
+        >
+          <GrFormPrevious />
+        </li>
+        {pageNumbers
+          .slice(
+            ...(page === 2
+              ? [page - 1, page + 4]
+              : page === 1
+              ? [page, page + 5]
+              : [page - 2, page + 3])
+          )
+          .map((page: number) => {
+            return (
+              <li
+                className={data.meta.current_page === page ? "active" : ""}
+                value={page}
+                key={page}
+                onClick={(e) => {
+                  setPage(e.currentTarget.value);
+                }}
+              >
+                {page}
+              </li>
+            );
+          })}
+        <li
+          className="next"
+          onClick={() => {
+            page === pageNumbers.length - 1 ? setPage(1) : setPage(page + 1);
+          }}
+        >
+          <GrFormNext />
+        </li>
+        <li className="next" onClick={() => setPage(pageNumbers.length - 1)}>
+          <MdLastPage />
+        </li>
+      </ul>
     </section>
   );
 };
