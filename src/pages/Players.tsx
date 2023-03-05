@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 import Pagination from "../components/Pagination";
+import PlayersImg from "../images/players.jpg";
 
 const Players: React.FC = () => {
   const { data, setSearch, setQuery, setPage, isLoading } = useGlobalContext();
@@ -11,7 +12,7 @@ const Players: React.FC = () => {
   }, []);
 
   return (
-    <section>
+    <section className="mainSection">
       <article className="filter">
         <input
           type="text"
@@ -26,30 +27,34 @@ const Players: React.FC = () => {
       {isLoading ? (
         <div className="loading"></div>
       ) : (
-        <article className="mainSection">
+        <article className="container">
           {data?.data?.map((player: any) => {
             return (
-              <div key={player.id}>
-                <h2>
+              <div key={player.id} className="single">
+                <img src={PlayersImg} alt="Players" />
+                <h1>
                   {player.first_name} {player.last_name}
-                </h2>
-                {player.position ? <h2>Position: {player.position}</h2> : ""}
-                {player.height_feet ? (
+                </h1>
+                <div>
+                  {player.position ? <h2>Position: {player.position}</h2> : ""}
+                  {player.height_feet ? (
+                    <h2>
+                      Height: {player.height_feet}′ {player.height_inches}′′
+                    </h2>
+                  ) : (
+                    ""
+                  )}
                   <h2>
-                    Height: {player.height_feet}′ {player.height_inches}′′
+                    Team: {player?.team?.full_name} (
+                    {player?.team?.abbreviation})
                   </h2>
-                ) : (
-                  ""
-                )}
-                <h2>
-                  Team: {player?.team?.full_name} ({player?.team?.abbreviation})
-                </h2>
+                </div>
               </div>
             );
           })}
         </article>
       )}
-      {!isLoading ? <Pagination /> : ""}
+      {/* {!isLoading ? <Pagination /> : ""} */}
     </section>
   );
 };

@@ -26,7 +26,7 @@ const News: React.FC = () => {
   }, []);
 
   return (
-    <section className="news">
+    <section className="mainSection">
       <article className="filter">
         <input
           type="text"
@@ -56,12 +56,12 @@ const News: React.FC = () => {
       {isLoading ? (
         <div className="loading"></div>
       ) : news.length > 3 ? (
-        <article className="newsContainer">
+        <article className="container">
           {currentPageData.map((item: any) => {
             const id = Math.floor(Math.random() * 1000000);
 
             return (
-              <div key={id} className="singleNew">
+              <div key={id} className="single">
                 <img src={newsImg} alt="newsImg" />
                 <h1>{item.title}</h1>
                 <div>

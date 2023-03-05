@@ -102,23 +102,24 @@ nav ul li a.active {
   color: #d81f55;
 }
 
-.news {
+.mainSection {
   max-width: 90vw;
   margin: 3rem auto;
   font-family: "Roboto", Arial, sans-serif;
 }
-.news #error {
+.mainSection #error {
   color: #ff0000;
   margin-top: 15rem;
   text-align: center;
 }
-.newsContainer {
+.mainSection .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  place-items: center;
   gap: 50px 75px;
   margin-top: 6rem;
 }
-.newsContainer .singleNew {
+.mainSection .container .single {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,11 +138,11 @@ nav ul li a.active {
   margin-bottom: 3rem;
   border-radius: 10px;
 }
-.newsContainer .singleNew img {
+.mainSection .container .single img {
   height: 250px;
   width: 100%;
 }
-.newsContainer .singleNew h1 {
+.mainSection .container .single h1 {
   font-size: 1.5rem;
   margin: 1rem 0;
   text-transform: uppercase;
@@ -150,7 +151,7 @@ nav ul li a.active {
       -ms-flex: 1;
           flex: 1;
 }
-.newsContainer .singleNew div {
+.mainSection .container .single div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,10 +168,10 @@ nav ul li a.active {
   margin-top: 1rem;
   padding: 20px 20px 30px 20px;
 }
-.newsContainer .singleNew div h2 {
+.mainSection .container .single div h2 {
   margin-bottom: 1rem;
 }
-.newsContainer .singleNew div a {
+.mainSection .container .single div a {
   background-color: #0165ff;
   color: #fff;
   font-size: 1.3rem;
@@ -182,7 +183,7 @@ nav ul li a.active {
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
 }
-.newsContainer .singleNew div a:hover {
+.mainSection .container .single div a:hover {
   color: #000;
   background-color: #d81f55;
 }
@@ -285,21 +286,6 @@ header ul li#head {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
-}
-
-.mainSection {
-  max-width: 90vw;
-  margin: 5rem auto;
-  font-family: "Roboto", Arial, sans-serif;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 50px;
-}
-.mainSection h2 {
-  margin: 5px 0;
-}
-.mainSection h3 {
-  margin: 5px 0;
 }
 
 .yourTeam {
@@ -528,7 +514,7 @@ header ul li#head {
     margin-bottom: 3rem;
     width: 100%;
   }
-  .newsContainer .singleNew {
+  .mainSection .container .single {
     width: 100%;
   }
 }
@@ -546,22 +532,22 @@ header ul li#head {
   header ul {
     width: 100%;
   }
-  .newsContainer {
+  .mainSection .container {
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
   }
-  .newsContainer .singleNew {
+  .mainSection .container .single {
     width: 550px;
   }
-  .news .filter {
+  .mainSection .filter {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 0;
   }
-  .news .filter input {
+  .mainSection .filter input {
     margin: 0.5rem 1rem;
   }
-  .news .filter input:last-child {
+  .mainSection .filter input:last-child {
     margin: 1rem auto;
     width: 50%;
   }
@@ -615,14 +601,14 @@ header ul li#head {
   nav .menuBtn {
     display: block;
   }
-  .newsContainer .singleNew {
+  .mainSection .container .single {
     width: 450px;
   }
-  .news .filter input {
+  .mainSection .filter input {
     margin: 1rem auto;
     width: 90%;
   }
-  .news .filter input:last-child {
+  .mainSection .filter input:last-child {
     width: 90%;
   }
   .mainSection {
@@ -663,10 +649,10 @@ header ul li#head {
   .mainSection div h2 {
     font-size: 1.3rem;
   }
-  .newsContainer {
+  .mainSection .container {
     text-align: center;
   }
-  .newsContainer .singleNew {
+  .mainSection .container .single {
     width: 100%;
   }
 }
@@ -693,12 +679,18 @@ header ul li#head {
   .mainSection div h2 {
     font-size: 1.5rem;
   }
-  .newsContainer .singleNew img {
-    height: 200px;
+  .mainSection .container .single div {
+    margin-top: 0;
   }
-  .newsContainer .singleNew h1 {
+  .mainSection .container .single img {
+    height: 190px;
+  }
+  .mainSection .container .single h1 {
     font-size: 1.3rem;
     padding: 0 15px;
+  }
+  .mainSection .container .single h2 {
+    font-size: 1.3rem;
   }
 }
 * {

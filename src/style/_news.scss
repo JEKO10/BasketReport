@@ -1,4 +1,4 @@
-.news {
+.mainSection {
   max-width: 90vw;
   margin: 3rem auto;
   font-family: $primaryFont;
@@ -9,13 +9,14 @@
     text-align: center;
   }
 
-  &Container {
+  .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    place-items: center;
     gap: 50px 75px;
     margin-top: 6rem;
 
-    .singleNew {
+    .single {
       @include flex(space-between, flex-start);
       flex-direction: column;
       background-color: #fff;
