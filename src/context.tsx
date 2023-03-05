@@ -17,7 +17,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [playerNews, setPlayerNews] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(30);
+  const [perPage, setPerPage] = useState(15);
   const [query, setQuery] = useState("");
   const [search, setSearch] = useState("");
 

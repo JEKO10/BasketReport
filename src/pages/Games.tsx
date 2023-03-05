@@ -36,7 +36,7 @@ const Games: React.FC = () => {
           })}
         </article>
       )}
-      {/* {!isLoading ? <Pagination /> : ""} */}
+      {!isLoading ? <Pagination /> : ""}
     </section>
   );
 };

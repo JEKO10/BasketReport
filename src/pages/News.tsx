@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import { MdFirstPage, MdLastPage } from "react-icons/md";
 import newsImg from "../images/newsImg.jpg";
 
 const News: React.FC = () => {
@@ -23,6 +25,7 @@ const News: React.FC = () => {
 
   useEffect(() => {
     setQuery("season_averages");
+    setPage(1);
   }, []);
 
   return (
@@ -83,6 +86,17 @@ const News: React.FC = () => {
       )}
       {!isLoading ? (
         <ul className="pagination">
+          <li className="prev" onClick={() => setPage(1)}>
+            <MdFirstPage />
+          </li>
+          <li
+            className="prev"
+            onClick={() => {
+              page === 1 ? setPage(pageNews.length) : setPage(page - 1);
+            }}
+          >
+            <GrFormPrevious />
+          </li>
           {pageNews.map((pageNumber) => (
             <li
               className={page === pageNumber ? "active" : ""}
@@ -93,6 +107,17 @@ const News: React.FC = () => {
               {pageNumber}
             </li>
           ))}
+          <li
+            className="next"
+            onClick={() => {
+              page === pageNews.length ? setPage(1) : setPage(page + 1);
+            }}
+          >
+            <GrFormNext />
+          </li>
+          <li className="next" onClick={() => setPage(pageNews.length)}>
+            <MdLastPage />
+          </li>
         </ul>
       ) : (
         ""

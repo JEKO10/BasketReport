@@ -54,7 +54,7 @@ const Players: React.FC = () => {
           })}
         </article>
       )}
-      {/* {!isLoading ? <Pagination /> : ""} */}
+      {!isLoading ? <Pagination /> : ""}
     </section>
   );
 };

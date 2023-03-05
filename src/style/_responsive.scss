@@ -177,6 +177,12 @@
       width: 100%;
     }
   }
+
+  .pagination li.next,
+  .pagination li.prev {
+    order: 5;
+    margin: 20px 5px;
+  }
 }
 
 @include mediaSmall {
