@@ -327,6 +327,11 @@ header ul li#head {
   border: 1px solid #000;
   margin: 0.5rem 0;
   padding: 10px 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.yourTeam .team .singlePlayer > * {
+  padding: 0 5px;
 }
 .yourTeam .team .singlePlayer > div {
   display: -webkit-box;
@@ -419,7 +424,7 @@ header ul li#head {
   cursor: pointer;
 }
 .pagination li {
-  margin: 0 5px;
+  margin: 10px 5px;
   padding: 10px 15px;
   border: 1px solid #000;
   border-radius: 5px;
@@ -645,6 +650,7 @@ header ul li#head {
   }
   .yourTeam .team .singlePlayer > div h3 {
     font-size: 1.3rem;
+    text-align: center;
   }
 }
 @media screen and (max-width: 576px) {
@@ -657,12 +663,10 @@ header ul li#head {
   .mainSection .container .single {
     width: 100%;
   }
-  .pagination li.next,
-  .pagination li.prev {
+  .pagination li.next, .pagination li.prev {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
-    margin: 20px 5px;
   }
 }
 @media screen and (max-width: 480px) {

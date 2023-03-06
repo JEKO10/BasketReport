@@ -24,6 +24,11 @@
       border: 1px solid #000;
       margin: 0.5rem 0;
       padding: 10px 15px;
+      flex-wrap: wrap;
+
+      > * {
+        padding: 0 5px;
+      }
 
       > div {
         @include flex(center, center);

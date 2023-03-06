@@ -172,6 +172,7 @@ const MakeTeam: React.FC = () => {
           name="name"
           placeholder="Name"
           value={playerName}
+          maxLength={23}
           required
           onChange={(e) => setPlayerName(e.target.value)}
           onKeyDown={(e) => {
@@ -200,6 +201,7 @@ const MakeTeam: React.FC = () => {
           name="age"
           placeholder="Age"
           value={age}
+          maxLength={3}
           required
           onChange={(e) => setAge(e.target.value)}
           onKeyDown={(e) => {

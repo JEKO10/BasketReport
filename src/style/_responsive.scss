@@ -159,6 +159,7 @@
 
         h3 {
           font-size: 1.3rem;
+          text-align: center;
         }
       }
     }
@@ -178,10 +179,11 @@
     }
   }
 
-  .pagination li.next,
-  .pagination li.prev {
-    order: 5;
-    margin: 20px 5px;
+  .pagination li {
+    &.next,
+    &.prev {
+      order: 5;
+    }
   }
 }
 
