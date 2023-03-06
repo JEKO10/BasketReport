@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/BasketReport/static/css/main.2b3f46ef.css",
-    "main.js": "/BasketReport/static/js/main.f13c12e6.js",
+    "main.css": "/BasketReport/static/css/main.744eb853.css",
+    "main.js": "/BasketReport/static/js/main.c21a7b57.js",
     "static/js/787.c39c6312.chunk.js": "/BasketReport/static/js/787.c39c6312.chunk.js",
+    "static/media/games.jpg": "/BasketReport/static/media/games.9023be2bcd0ef532f76b.jpg",
+    "static/media/teams.png": "/BasketReport/static/media/teams.cd5aa70b952d0d40a68a.png",
     "static/media/lbj.jpg": "/BasketReport/static/media/lbj.389da4b214f2fc030fc7.jpg",
+    "static/media/players.jpg": "/BasketReport/static/media/players.201032f164231fc20d39.jpg",
     "static/media/newsImg.jpg": "/BasketReport/static/media/newsImg.ecac7728909c4b1355b2.jpg",
     "static/media/logo.svg": "/BasketReport/static/media/logo.b037e7a41f5b508a41bea521f2a20322.svg",
     "index.html": "/BasketReport/index.html",
-    "main.2b3f46ef.css.map": "/BasketReport/static/css/main.2b3f46ef.css.map",
-    "main.f13c12e6.js.map": "/BasketReport/static/js/main.f13c12e6.js.map",
+    "main.744eb853.css.map": "/BasketReport/static/css/main.744eb853.css.map",
+    "main.c21a7b57.js.map": "/BasketReport/static/js/main.c21a7b57.js.map",
     "787.c39c6312.chunk.js.map": "/BasketReport/static/js/787.c39c6312.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b3f46ef.css",
-    "static/js/main.f13c12e6.js"
+    "static/css/main.744eb853.css",
+    "static/js/main.c21a7b57.js"
   ]
 }
