@@ -17,7 +17,7 @@ The project is about basketball, one of my biggest passions, apart from programm
 
 ## Project overview
 
-I am impressed by TypeScript, especially for its quick error tracking and improved support for JSX. With TypeScript's ability to define Props and their types outside of the component, React components are cleaner. Reducing the chances of potential bugs is my favorite feature. Now, I find it challenging to use React without TypeScript. Apart from TypeScript, I used Sass for styling, react-router-dom for navigating, and context API for state management. Players, teams and games are retrieved from the balldontlie API. You are able to create your team that is stored in a local storage object. Maximum of 12 players, starting five and seven on the bench. You must provide the player's name, age, position, and image URL.
+I am impressed by TypeScript, especially for its quick error tracking and improved support for JSX. With TypeScript's ability to define Props and their types outside of the component, React components are cleaner. Reducing the chances of potential bugs is my favorite feature. Now, I find it challenging to use React without TypeScript. Apart from TypeScript, I used Sass for styling, react-router-dom for navigating, and context API for state management. Players, teams, and games are retrieved from the balldontlie API. You are able to create your team that is stored in a local storage object. Maximum of 12 players, starting five and seven on the bench. You must provide the player's name, age, position, and image URL.
 
 ## Built with
 
