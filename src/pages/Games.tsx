@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 import Pagination from "../components/Pagination";
 import GamesImg from "../images/games.jpg";
+import { IData } from "../types/contextTypes";
 
 const Games: React.FC = () => {
   const { data, setPage, setQuery, isLoading } = useGlobalContext();
@@ -17,7 +18,7 @@ const Games: React.FC = () => {
         <div className="loading"></div>
       ) : (
         <article className="container">
-          {data?.data?.map((game: any) => {
+          {data?.data?.map((game: IData) => {
             return (
               <div key={game.id} className="single">
                 <img src={GamesImg} alt="GamesImg" />

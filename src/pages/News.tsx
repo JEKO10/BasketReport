@@ -3,6 +3,7 @@ import { useGlobalContext } from "../context";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { MdFirstPage, MdLastPage } from "react-icons/md";
 import newsImg from "../images/newsImg.jpg";
+import { INews } from "../types/contextTypes";
 
 const News: React.FC = () => {
   const {
@@ -60,7 +61,7 @@ const News: React.FC = () => {
         <div className="loading"></div>
       ) : news.length > 3 ? (
         <article className="container">
-          {currentPageData.map((item: any) => {
+          {currentPageData.map((item: INews) => {
             const id = Math.floor(Math.random() * 1000000);
 
             return (

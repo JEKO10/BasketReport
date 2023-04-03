@@ -1,4 +1,4 @@
-interface IData {
+export interface IData {
   id: number;
   first_name: string;
   height_feet: number;
@@ -35,11 +35,11 @@ interface IMeta {
 }
 
 export interface IAPIData {
-  data: Partial<IData[]>;
+  data: IData[];
   meta: IMeta;
 }
 
-interface INews {
+export interface INews {
   source: string;
   title: string;
   url: string;

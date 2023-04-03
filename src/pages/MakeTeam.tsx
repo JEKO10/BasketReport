@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { GiLeg } from "react-icons/gi";
 import { useGlobalContext } from "../context";
+import { IData } from "../types/contextTypes";
 
-let timer: any;
+type Player = {
+  id: number;
+  imgUrl: string;
+  playerName: string;
+  position: string;
+  age: number;
+};
+
+let timer: ReturnType<typeof setTimeout>;
 
 const MakeTeam: React.FC = () => {
   const { setQuery } = useGlobalContext();
@@ -68,7 +77,7 @@ const MakeTeam: React.FC = () => {
   };
 
   const deletePlayer = (id: string | number) => {
-    const filteredPlayers = localData.filter((player: any) => {
+    const filteredPlayers = localData.filter((player: IData) => {
       return player.id !== id;
     });
     localStorage.setItem("team", JSON.stringify(filteredPlayers));
@@ -85,7 +94,7 @@ const MakeTeam: React.FC = () => {
       <article className="team">
         <div className="starting">
           <h2>Starting 5</h2>
-          {localData.slice(0, 5).map((player: any) => (
+          {localData.slice(0, 5).map((player: Player) => (
             <div key={player.id} className="singlePlayer">
               <div>
                 <img src={player.imgUrl} alt={player.playerName} />
@@ -105,7 +114,7 @@ const MakeTeam: React.FC = () => {
         </div>
         <div className="bench">
           <h2>Bench</h2>
-          {localData.slice(5, localData.length).map((player: any) => (
+          {localData.slice(5, localData.length).map((player: Player) => (
             <div key={player.id} className="singlePlayer">
               <div>
                 <img src={player.imgUrl} alt={player.playerName} />
