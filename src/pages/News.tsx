@@ -18,7 +18,12 @@ const News: React.FC = () => {
   } = useGlobalContext();
   const pageNews = [];
   const offset = page * 9;
-  const currentPageData = news.slice(offset, offset + 12);
+  let currentPageData;
+  if (news.length > 3) {
+    currentPageData = news?.slice(offset, offset + 12);
+  } else {
+    currentPageData = news;
+  }
 
   for (let i = 1; i < Math.ceil(news.length / 12); i++) {
     pageNews.push(i);
@@ -61,7 +66,7 @@ const News: React.FC = () => {
         <div className="loading"></div>
       ) : news.length > 3 ? (
         <article className="container">
-          {currentPageData.map((item: INews) => {
+          {currentPageData?.map((item: INews) => {
             const id = Math.floor(Math.random() * 1000000);
 
             return (
