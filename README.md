@@ -10,6 +10,7 @@
 - [Project overview](#project-overview)
 - [Built with](#built-with)
 - [Live preview](#live-preview)
+- [Lighthouse Score](#lighthouse-score)
 
 ## Project task
 
@@ -29,6 +30,19 @@ I am impressed by TypeScript, especially for its quick error tracking and improv
 - Local Storage
 - React Router Dom
 - GitHub Pages
+
+## Lighthouse Score
+
+![Lighthouse Score](https://github.com/JEKO10/BasketReport/assets/84730554/24707f28-2384-4640-9304-dbd5cd646837)
+
+- **Performance**: 99
+- **Accessibility**: 100
+- **Best Practices**: 96
+- **SEO**: 100
+
+*Last updated: 6/10/2024*
+
+I continuously strive to maintain and improve these scores with each update.
 
 ## Live preview
 
