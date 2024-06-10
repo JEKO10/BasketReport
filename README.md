@@ -9,8 +9,8 @@
 - [Project task](#project-task)
 - [Project overview](#project-overview)
 - [Built with](#built-with)
-- [Live preview](#live-preview)
 - [Lighthouse Score](#lighthouse-score)
+- [Live preview](#live-preview)
 
 ## Project task
 
